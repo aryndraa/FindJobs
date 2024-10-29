@@ -5,16 +5,21 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class FreelancerLike extends Model
+class ProjectHistory extends Model
 {
     use HasFactory;
 
-    public function freelancer()
+    public function project()
     {
-        return $this->belongsTo(Freelancer::class);
+        return $this->belongsTo(Project::class);
     }
 
     public function client()
+    {
+        return $this->belongsTo(Client::class);
+    }
+
+    public function freelancer()
     {
         return $this->belongsTo(Freelancer::class);
     }

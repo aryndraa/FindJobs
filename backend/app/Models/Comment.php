@@ -10,16 +10,11 @@ class Comment extends Model
     use HasFactory;
 
     protected $fillable = [
-        "comment"
+        'comment'
     ];
 
-    public function freelancers()
+    public function commentable ()
     {
-        return $this->belongsTo(Freelancer::class);
-    }
-
-    public function project()
-    {
-        return $this->belongsTo(Project::class);
+        return $this->morphTo();
     }
 }

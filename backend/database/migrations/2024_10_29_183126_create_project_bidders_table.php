@@ -11,16 +11,12 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('freelancer_profiles', function (Blueprint $table) {
+        Schema::create('project_bidders', function (Blueprint $table) {
             $table->id();
+            $table->unsignedBigInteger('project_id');
             $table->unsignedBigInteger('freelancer_id');
+            $table->foreign('project_id')->references('id')->on('projects');
             $table->foreign('freelancer_id')->references('id')->on('freelancers');
-            $table->unsignedBigInteger('service_category_id');
-            $table->foreign('service_category_id')->references('id')->on('service_categories');
-            $table->string('bio');
-            $table->text('about');
-            $table->string('phone');
-            $table->string('country');
             $table->timestamps();
         });
     }
@@ -30,6 +26,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('freelancer_profiles');
+        Schema::dropIfExists('project_bidders');
     }
 };

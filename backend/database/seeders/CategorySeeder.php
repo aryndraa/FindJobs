@@ -2,11 +2,11 @@
 
 namespace Database\Seeders;
 
-use App\Models\ClientProfile;
+use App\Models\Category;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 
-class ClientProfileSeeder extends Seeder
+class CategorySeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -18,7 +18,7 @@ class ClientProfileSeeder extends Seeder
         $chunks = array_chunk(range(1, $totalRecords), $chunkSize);
 
         foreach ($chunks as $chunk) {
-            ClientProfile::factory()->count(count($chunk))->create();
+            Category::factory()->count(count($chunk))->create();
         }
     }
 }

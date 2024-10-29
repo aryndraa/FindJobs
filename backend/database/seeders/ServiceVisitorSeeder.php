@@ -2,11 +2,11 @@
 
 namespace Database\Seeders;
 
-use App\Models\FreelancerLike;
+use App\Models\ServiceVisitor;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 
-class FreelancerLikeSeeder extends Seeder
+class ServiceVisitorSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -18,7 +18,7 @@ class FreelancerLikeSeeder extends Seeder
         $chunks = array_chunk(range(1, $totalRecords), $chunkSize);
 
         foreach ($chunks as $chunk) {
-            FreelancerLike::factory()->count(count($chunk))->create();
+            ServiceVisitor::factory()->count(count($chunk))->create();
         }
     }
 }

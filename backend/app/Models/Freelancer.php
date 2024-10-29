@@ -58,40 +58,23 @@ class Freelancer extends Authenticatable
         return $this->morphOne(File::class, 'related');
     }
 
-    public function views()
+    public function projectBidders()
     {
-        return $this->hasMany(FreelancerView::class , 'freelancer_id');
+        return $this->hasMany(ProjectBidder::class);
     }
 
-    public function likes()
+    public function services()
     {
-        return $this->hasMany(FreelancerLike::class, 'freelancer_id');
+        return $this->hasMany(Service::class);
     }
 
-    public function comments()
-    {
-        return $this->hasMany(Comment::class, 'freelancer_id');
-    }
-
-    public function projectUser()
-    {
-        return $this->hasOne(ProjectUser::class, 'freelancer_id');
-    }
-
-    public function projectBid()
-    {
-        return $this->hasOne(ProjectBid::class, 'freelancer_id');
-    }
-
-
-    public function receivedChats()
-    {
-        return $this->morphMany(UserChat::class, 'receiver');
-    }
-
-    public function sentChats()
+    public function sentMessages()
     {
         return $this->morphMany(UserChat::class, 'sender');
     }
 
+    public function receivedMessages()
+    {
+        return $this->morphMany(UserChat::class, 'receiver');
+    }
 }

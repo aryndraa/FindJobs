@@ -2,11 +2,11 @@
 
 namespace Database\Seeders;
 
-use App\Models\ProjectBid;
+use App\Models\ServiceLike;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 
-class ProjectBidSeeder extends Seeder
+class ServiceLikeSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -18,7 +18,7 @@ class ProjectBidSeeder extends Seeder
         $chunks = array_chunk(range(1, $totalRecords), $chunkSize);
 
         foreach ($chunks as $chunk) {
-            ProjectBid::factory()->count(count($chunk))->create();
+            ServiceLike::factory()->count(count($chunk))->create();
         }
     }
 }

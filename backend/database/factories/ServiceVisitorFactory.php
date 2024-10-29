@@ -2,14 +2,14 @@
 
 namespace Database\Factories;
 
-use App\Models\Category;
+use App\Models\Client;
 use App\Models\Service;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
- * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\ServiceCategory>
+ * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\ServiceVisitor>
  */
-class ServiceCategoryFactory extends Factory
+class ServiceVisitorFactory extends Factory
 {
     /**
      * Define the model's default state.
@@ -20,7 +20,7 @@ class ServiceCategoryFactory extends Factory
     {
         return [
             'service_id' => Service::query()->inRandomOrder()->first()->id,
-            'category_id' => Category::query()->inRandomOrder()->first()->id,
+            'client_id'  => Client::query()->inRandomOrder()->first()->id,
         ];
     }
 }

@@ -2,16 +2,14 @@
 
 namespace Database\Factories;
 
-use App\Models\Client;
 use App\Models\Freelancer;
-use App\Models\Model;
 use App\Models\Project;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
- * @extends Factory<Model>
+ * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\ProjectBidder>
  */
-class ProjectBidFactory extends Factory
+class ProjectBidderFactory extends Factory
 {
     /**
      * Define the model's default state.
@@ -21,9 +19,8 @@ class ProjectBidFactory extends Factory
     public function definition(): array
     {
         return [
-            "freelancer_id" => Freelancer::inRandomOrder()->first()->id,
-            "client_id"    => Client::inRandomOrder()->first()->id,
-            "project_id"    => Project::inRandomOrder()->first()->id,
+            'project_id'    => Project::query()->inRandomOrder()->first()->id,
+            'freelancer_id' => Freelancer::query()->inRandomOrder()->first()->id,
         ];
     }
 }

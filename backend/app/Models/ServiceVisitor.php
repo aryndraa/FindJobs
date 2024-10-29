@@ -5,13 +5,13 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class FreelancerView extends Model
+class ServiceVisitor extends Model
 {
     use HasFactory;
 
-    public function freelancer()
+    public function service()
     {
-        return $this->belongsTo(Freelancer::class);
+        return $this->belongsTo(Service::class);
     }
 
     public function client()

@@ -5,20 +5,16 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class UserChat extends Model
+class ServiceLike extends Model
 {
     use HasFactory;
 
-    protected $fillable = [
-        'message'
-    ];
-
-    public function sender()
+    public function service()
     {
-        return $this->morphTo();
+        return $this->belongsTo(Service::class);
     }
 
-    public function receiver()
+    public function user()
     {
         return $this->morphTo();
     }

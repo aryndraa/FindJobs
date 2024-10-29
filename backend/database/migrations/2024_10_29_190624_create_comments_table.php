@@ -11,9 +11,13 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('service_categories', function (Blueprint $table) {
+        Schema::create('comments', function (Blueprint $table) {
             $table->id();
-            $table->string('name');
+            $table->string('job_type');
+            $table->unsignedBigInteger('job_id');
+            $table->string('user_type');
+            $table->unsignedBigInteger('user_id');
+            $table->text('comment');
             $table->timestamps();
         });
     }
@@ -23,6 +27,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('service_categories');
+        Schema::dropIfExists('comments');
     }
 };

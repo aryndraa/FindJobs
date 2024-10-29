@@ -2,11 +2,11 @@
 
 namespace Database\Seeders;
 
-use App\Models\ProjectUser;
+use App\Models\FreelancerStar;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 
-class ProjectUserSeeder extends Seeder
+class FreelancerStarSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -18,7 +18,7 @@ class ProjectUserSeeder extends Seeder
         $chunks = array_chunk(range(1, $totalRecords), $chunkSize);
 
         foreach ($chunks as $chunk) {
-            ProjectUser::factory()->count(count($chunk))->create();
+            FreelancerStar::factory()->count(count($chunk))->create();
         }
     }
 }

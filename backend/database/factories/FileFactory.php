@@ -4,26 +4,24 @@ namespace Database\Factories;
 
 use App\Models\Client;
 use App\Models\Freelancer;
-use App\Models\Story;
-use App\Models\User;
+use App\Models\Project;
+use App\Models\Service;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
- * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\Model>
+ * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\File>
  */
 class FileFactory extends Factory
 {
-
     /**
      * Define the model's default state.
      *
      * @return array<string, mixed>
      */
-
     public function definition(): array
     {
-        $relatedType = $this->faker->randomElement([Freelancer::class, Client::class]);
-        $relatedId = $relatedType::query()->inRandomOrder()->value('id');
+        $relatedType = $this->faker->randomElement([Freelancer::class, Client::class, Service::class, Project::class]);
+        $relatedId   = $relatedType::query()->inRandomOrder()->value('id');
 
         return [
             'file_name'    => fake()->word() . '.'. $this->faker->fileExtension(),

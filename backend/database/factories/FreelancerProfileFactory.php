@@ -2,8 +2,8 @@
 
 namespace Database\Factories;
 
+use App\Models\Category;
 use App\Models\Freelancer;
-use App\Models\ServiceCategory;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
@@ -19,12 +19,12 @@ class FreelancerProfileFactory extends Factory
     public function definition(): array
     {
         return [
-            "freelancer_id"       => Freelancer::inRandomOrder()->first()->id,
-            "service_category_id" => ServiceCategory::inRandomOrder()->first()->id,
-            "about"               => fake()->paragraph(),
-            "bio"                 => fake()->sentence(),
-            "phone"               => fake()->phoneNumber(),
-            "country"             => fake()->country(),
+            'freelancer_id' => Freelancer::query()->inRandomOrder()->first()->id,
+            'category_id'   => Category::query()->inRandomOrder()->first()->id,
+            'bio'           => fake()->sentence(),
+            'about'         => fake()->paragraph(),
+            'phone'         => fake()->phoneNumber(),
+            'country'       => fake()->country(),
         ];
     }
 }

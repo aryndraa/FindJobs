@@ -2,11 +2,11 @@
 
 namespace Database\Seeders;
 
-use App\Models\FreelancerView;
+use App\Models\ProjectBidder;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 
-class FreelancerViewSeeder extends Seeder
+class ProjectBidderSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -18,7 +18,7 @@ class FreelancerViewSeeder extends Seeder
         $chunks = array_chunk(range(1, $totalRecords), $chunkSize);
 
         foreach ($chunks as $chunk) {
-            FreelancerView::factory()->count(count($chunk))->create();
+            ProjectBidder::factory()->count(count($chunk))->create();
         }
     }
 }

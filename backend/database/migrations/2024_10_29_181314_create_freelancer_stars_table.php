@@ -11,13 +11,12 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('comments', function (Blueprint $table) {
+        Schema::create('freelancer_stars', function (Blueprint $table) {
             $table->id();
             $table->unsignedBigInteger('freelancer_id');
-            $table->unsignedBigInteger('project_id');
             $table->foreign('freelancer_id')->references('id')->on('freelancers');
-            $table->foreign('project_id')->references('id')->on('projects');
-            $table->text('comment');
+            $table->unsignedBigInteger('user_id');
+            $table->string('user_type');
             $table->timestamps();
         });
     }
@@ -27,6 +26,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('comments');
+        Schema::dropIfExists('freelancer_stars');
     }
 };

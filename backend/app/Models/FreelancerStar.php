@@ -5,20 +5,16 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class UserChat extends Model
+class FreelancerStar extends Model
 {
     use HasFactory;
 
-    protected $fillable = [
-        'message'
-    ];
-
-    public function sender()
+    public function freelancer()
     {
-        return $this->morphTo();
+        return $this->belongsTo(Freelancer::class);
     }
 
-    public function receiver()
+    public function user()
     {
         return $this->morphTo();
     }

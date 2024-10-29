@@ -6,7 +6,7 @@ use App\Models\Client;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
- * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\Model>
+ * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\ClientProfile>
  */
 class ClientProfileFactory extends Factory
 {
@@ -18,11 +18,11 @@ class ClientProfileFactory extends Factory
     public function definition(): array
     {
         return [
-            "client_id" => Client::inRandomOrder()->first()->id,
-            "bio"       => $this->faker->sentence(),
-            "about"     => $this->faker->paragraph(),
-            "phone"     => $this->faker->phoneNumber(),
-            "country"   => $this->faker->country(),
+            'client_id' => Client::query()->inRandomOrder()->first()->id,
+            'bio'       => fake()->sentence(),
+            'about'     => fake()->paragraph(),
+            'phone'     => fake()->phoneNumber(),
+            'country'   => fake()->country(),
         ];
     }
 }

@@ -10,50 +10,25 @@ class Client extends Model
     use HasFactory;
 
     protected $fillable = [
-        "name",
-        "username",
-        "email",
-        "password",
+        'name',
+        'username',
+        'email',
+        'password',
     ];
 
-    public function profile()
+    public function servicevisitors()
     {
-        return $this->hasOne(ClientProfile::class);
+        return $this->hasMany(ServiceVisitor::class);
     }
 
-    public function projects()
+    public function sentMessages()
     {
-        return $this->hasMany(Project::class);
+        return $this->morphMany(UserChat::class, 'sender');
     }
 
-    public function projectUsers()
-    {
-        return $this->hasMany(ProjectUser::class);
-    }
-
-    public function freelancerLikes()
-    {
-        return $this->hasMany(FreelancerLike::class);
-    }
-
-    public function avatar()
-    {
-        return $this->morphOne(File::class, 'related');
-    }
-
-    public function backCover()
-    {
-        return $this->morphOne(File::class, 'related');
-    }
-
-
-    public function receivedChats()
+    public function receivedMessages()
     {
         return $this->morphMany(UserChat::class, 'receiver');
     }
 
-    public function sentChats()
-    {
-        return $this->morphMany(UserChat::class, 'sender');
-    }
 }

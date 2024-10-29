@@ -9,14 +9,13 @@ class ProjectCategory extends Model
 {
     use HasFactory;
 
-
-    public function serviceCategory()
-    {
-        return $this->belongsTo(ProjectCategory::class);
-    }
-
     public function project()
     {
         return $this->belongsTo(Project::class);
+    }
+
+    public function category()
+    {
+        return $this->belongsTo(Category::class);
     }
 }

@@ -9,7 +9,7 @@ use Illuminate\Database\Eloquent\Factories\Factory;
 /**
  * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\Model>
  */
-class FreelancerViewFactory extends Factory
+class FreelancerStarFactory extends Factory
 {
     /**
      * Define the model's default state.
@@ -18,9 +18,13 @@ class FreelancerViewFactory extends Factory
      */
     public function definition(): array
     {
+        $userType = $this->faker->randomElement([Client::class, Freelancer::class]);
+        $userId = $userType::query()->inRandomOrder()->value('id');
+
         return [
-            "freelancer_id" => Freelancer::inRandomOrder()->first()->id,
-            "client_id"     => Client::inRandomOrder()->first()->id,
+            'freelancer_id' => Freelancer::query()->inRandomOrder()->first()->id,
+            'user_id'      => $userId,
+            'user_type'    => $userType,
         ];
     }
 }

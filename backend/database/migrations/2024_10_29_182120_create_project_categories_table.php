@@ -11,12 +11,12 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('freelancer_views', function (Blueprint $table) {
+        Schema::create('project_categories', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('freelancer_id');
-            $table->foreign('freelancer_id')->references('id')->on('freelancers');
-            $table->unsignedBigInteger('client_id');
-            $table->foreign('client_id')->references('id')->on('clients');
+            $table->unsignedBigInteger('category_id');
+            $table->unsignedBigInteger('project_id');
+            $table->foreign('category_id')->references('id')->on('categories');
+            $table->foreign('project_id')->references('id')->on('projects');
             $table->timestamps();
         });
     }
@@ -26,6 +26,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('freelancer_views');
+        Schema::dropIfExists('project_categories');
     }
 };

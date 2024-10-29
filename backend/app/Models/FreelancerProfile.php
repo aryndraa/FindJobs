@@ -8,20 +8,11 @@ use Illuminate\Database\Eloquent\Model;
 class FreelancerProfile extends Model
 {
     use HasFactory;
+
     protected $fillable = [
-        "bio",
-        "about",
-        "phone",
-        "country"
+        'bio',
+        'about',
+        'phone',
+        'country'
     ];
-
-    public function freelance()
-    {
-        return $this->belongsTo(Freelancer::class);
-    }
-
-    public function serviceCategory()
-    {
-        return $this->belongsTo(ServiceCategory::class);
-    }
 }

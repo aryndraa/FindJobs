@@ -7,7 +7,7 @@ use App\Models\Freelancer;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
- * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\Model>
+ * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\UserChat>
  */
 class UserChatFactory extends Factory
 {
@@ -18,22 +18,17 @@ class UserChatFactory extends Factory
      */
     public function definition(): array
     {
-        $senderType = $this->faker->randomElement([Client::class, Freelancer::class]);
-        $receiverType = $this->faker->randomElement([Client::class, Freelancer::class]);
-
-        while ($senderType === $receiverType) {
-            $receiverType = $this->faker->randomElement([Client::class, Freelancer::class]);
-        }
-
-        $sender = $senderType::inRandomOrder()->first();
-        $receiver = $receiverType::inRandomOrder()->first();
+        $receiverType = fake()->randomElement([Client::class, Freelancer::class]);
+        $receiverId = $receiverType::query()->inRandomOrder()->first()->id;
+        $senderType = fake()->randomElement([Client::class, Freelancer::class]);
+        $senderId = $senderType::query()->inRandomOrder()->first()->id;
 
         return [
-            'sender_id'     => $sender->id,
-            'sender_type'   => $senderType,
-            'receiver_id'   => $receiver->id,
+            'receiver_id' => $receiverId,
+            'sender_id' => $senderId,
             'receiver_type' => $receiverType,
-            'message'       => $this->faker->sentence,
+            'sender_type' => $senderType,
+            'message' => fake()->sentence(),
         ];
     }
 }

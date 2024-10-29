@@ -6,7 +6,7 @@ use App\Models\Client;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
- * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\Model>
+ * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\Project>
  */
 class ProjectFactory extends Factory
 {
@@ -18,13 +18,13 @@ class ProjectFactory extends Factory
     public function definition(): array
     {
         return [
-            "client_id"    => Client::inRandomOrder()->first()->id,
-            "name"         => fake()->sentence(),
-            "description"  => fake()->paragraph(),
-            "price_min"    => fake()->numberBetween(1000, 10000),
-            "price_max"    => fake()->numberBetween(10000, 100000),
-            "is_completed" => fake()->boolean(),
-            "bid_status"   => fake()->boolean(),
+            'client_id'    => Client::query()->inRandomOrder()->first()->id,
+            'title'        => fake()->jobTitle(),
+            'description'  => fake()->text(),
+            'price_min'    => fake()->numberBetween(50000, 500000),
+            'price_max'    => fake()->numberBetween(50000, 500000),
+            'is_completed' => fake()->boolean(),
+            'bid_status'   => fake()->boolean(),
         ];
     }
 }

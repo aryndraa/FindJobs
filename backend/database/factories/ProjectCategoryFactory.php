@@ -2,12 +2,12 @@
 
 namespace Database\Factories;
 
+use App\Models\Category;
 use App\Models\Project;
-use App\Models\ServiceCategory;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
- * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\Model>
+ * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\ProjectCategory>
  */
 class ProjectCategoryFactory extends Factory
 {
@@ -19,8 +19,8 @@ class ProjectCategoryFactory extends Factory
     public function definition(): array
     {
         return [
-            "service_category_id" => ServiceCategory::inRandomOrder()->first()->id,
-            "project_id"          => Project::inRandomOrder()->first()->id,
+            'category_id' => Category::query()->inRandomOrder()->first()->id,
+            'project_id'  => Project::query()->inRandomOrder()->first()->id,
         ];
     }
 }

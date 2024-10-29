@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Factories\Factory;
 use Illuminate\Support\Facades\Hash;
 
 /**
- * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\Model>
+ * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\Admin>
  */
 class AdminFactory extends Factory
 {
@@ -18,9 +18,9 @@ class AdminFactory extends Factory
     public function definition(): array
     {
         return [
-            "name"     => $this->faker->name(),
-            "email"    => $this->faker->unique()->email(),
-            "password" => Hash::make('password'),
+            'name'     => fake()->name(),
+            'email'    => fake()->email(),
+            'password' => Hash::make('password'),
         ];
     }
 }

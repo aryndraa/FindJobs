@@ -9,15 +9,13 @@ class ServiceCategory extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['name'];
-
-    public function freelancerProfile()
+    public function service()
     {
-        return $this->hasMany(FreelancerProfile::class);
+        return $this->belongsTo(Service::class);
     }
 
-    public function projectCategories()
+    public function category()
     {
-        return $this->hasMany(ProjectCategory::class);
+        return $this->belongsTo(Category::class);
     }
 }

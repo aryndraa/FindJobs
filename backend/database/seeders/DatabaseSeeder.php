@@ -2,11 +2,10 @@
 
 namespace Database\Seeders;
 
+use App\Models\ClientProfile;
 use App\Models\Freelancer;
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
-use App\Models\Project;
-use App\Models\ServiceCategory;
-use App\Models\UserChat;
+use App\Models\FreelancerProfile;
 use Illuminate\Database\Seeder;
 
 class DatabaseSeeder extends Seeder
@@ -18,20 +17,24 @@ class DatabaseSeeder extends Seeder
     {
         $this->call([
             AdminSeeder::class,
-            ServiceCategorySeeder::class,
+            CategorySeeder::class,
+            FreelancerSeeder::class,
             ClientSeeder::class,
             ClientProfileSeeder::class,
             FreelancerSeeder::class,
             FreelancerProfileSeeder::class,
-            FreelancerLikeSeeder::class,
-            FreelancerViewSeeder::class,
+            FreelancerStarSeeder::class,
             ProjectSeeder::class,
             ProjectCategorySeeder::class,
-            ProjectBidSeeder::class,
-            ProjectUserSeeder::class,
-            CommentSeeder::class,
-            UserChatSeeder::class,
+            ProjectBidderSeeder::class,
+            ProjectHistorySeeder::class,
+            ServiceSeeder::class,
+            ServiceCategorySeeder::class,
+            ServiceLikeSeeder::class,
+            ServiceVisitorSeeder::class,
             FileSeeder::class,
+            UserChatSeeder::class,
+            CommentSeeder::class
         ]);
     }
 }

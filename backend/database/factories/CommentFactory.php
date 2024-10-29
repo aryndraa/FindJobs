@@ -2,12 +2,14 @@
 
 namespace Database\Factories;
 
+use App\Models\Client;
 use App\Models\Freelancer;
 use App\Models\Project;
+use App\Models\Service;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
- * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\Model>
+ * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\Comment>
  */
 class CommentFactory extends Factory
 {
@@ -18,10 +20,17 @@ class CommentFactory extends Factory
      */
     public function definition(): array
     {
+        $jobType = fake()->randomElement([Project::class, Service::class]);
+        $jobId = $jobType::query()->inRandomOrder()->value('id');
+        $userType = fake()->randomElement([Client::class, Freelancer::class]);
+        $userId = $userType::query()->inRandomOrder()->value('id');
+
         return [
-            "freelancer_id" => Freelancer::inRandomOrder()->first()->id,
-            "project_id"    => Project::inRandomOrder()->first()->id,
-            "comment"       => $this->faker->realText(),
+            'job_type'  => $jobType,
+            'job_id'    => $jobId,
+            'user_type' => $userType,
+            'user_id'   => $userId,
+            'comment'   => $this->faker->text(),
         ];
     }
 }
