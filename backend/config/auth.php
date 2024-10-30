@@ -47,6 +47,10 @@ return [
         'client' => [
             'driver' => 'sanctum',
             'provider' => 'clients',
+        ],
+        'freelancer' => [
+            'driver' => 'sanctum',
+            'provider' => 'freelancers',
         ]
     ],
 
@@ -79,6 +83,10 @@ return [
         'clients' => [
             'driver' => 'eloquent',
             'model'  =>  App\Models\Client::class,
+        ],
+        'freelancers' => [
+            'driver' => 'eloquent',
+            'model'  =>  App\Models\Freelancer::class,
         ]
 
         // 'users' => [

@@ -49,7 +49,7 @@ class Freelancer extends Authenticatable
         ];
     }
 
-    public function FreelancerProfile()
+    public function freelancerProfile()
     {
         return $this->hasOne(FreelancerProfile::class);
     }

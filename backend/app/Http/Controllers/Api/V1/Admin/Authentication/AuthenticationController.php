@@ -38,8 +38,8 @@ class AuthenticationController extends Controller
     public function register(RegisterRequest $request)
     {
         $admin = Admin::query()->create([
-            'name'  => $request->name,
-            'email' => $request->email,
+            'name'     => $request->name,
+            'email'    => $request->email,
             'password' => Hash::make($request->password)
         ]);
 

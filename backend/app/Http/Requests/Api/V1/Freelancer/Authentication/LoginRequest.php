@@ -1,10 +1,10 @@
 <?php
 
-namespace App\Http\Requests\Api\V1\Client\Authentication;
+namespace App\Http\Requests\Api\V1\Freelancer\Authentication;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class RegisterRequest extends FormRequest
+class LoginRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -22,11 +22,8 @@ class RegisterRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'name'             => ['required', 'string'],
-            'username'         => ['required', 'string', 'unique:clients'],
-            'email'            => ['required', 'email', 'unique:clients'],
-            'password'         => ['required', 'string', 'min:8'],
-            'confirm_password' => ['required', 'string', 'same:password'],
+            'credentials' => ['required', 'string'],
+            'password'    => ['required', 'string', 'min:8'],
         ];
     }
 }
