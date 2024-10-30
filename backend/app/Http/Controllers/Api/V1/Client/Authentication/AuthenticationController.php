@@ -1,11 +1,11 @@
 <?php
 
-namespace App\Http\Controllers\Api\V1\Admin\Authentication;
+namespace App\Http\Controllers\Api\V1\Client\Authentication;
 
 use App\Http\Controllers\Controller;
-use App\Http\Requests\Api\V1\Admin\Authentication\LoginRequest;
-use App\Http\Requests\Api\V1\Admin\Authentication\RegisterRequest;
-use App\Models\Admin;
+use App\Http\Requests\Api\V1\Client\Authentication\LoginRequest;
+use App\Http\Requests\Api\V1\Client\Authentication\RegisterRequest;
+use App\Models\Client;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Validation\ValidationException;
@@ -14,22 +14,23 @@ class AuthenticationController extends Controller
 {
     public function login(LoginRequest $request)
     {
-        $validator = $request->only('credentials', 'password');
+        $validator =$request->only('credentials', 'password');
 
-        $admin = Admin::query()
+        $client = Client::query()
             ->where('email', $validator['credentials'])
+            ->orWhere('username', $validator['credentials'])
             ->first();
 
-        if(!$admin || !Hash::check($validator['password'], $admin->password)) {
+        if(!$client || !Hash::check($validator['password'], $client->password)) {
             throw ValidationException::withMessages([
-                'credentials' => 'Invalid credentials'
+                'credentials' => 'username/email or password is incorrect',
             ]);
         }
 
-        $token = $admin->createToken('admin')->plainTextToken;
+        $token = $client->createToken('client')->plainTextToken;
 
         return response()->json([
-            'data' =>  [
+            'data' => [
                 'token' => $token,
             ]
         ]);
@@ -37,16 +38,17 @@ class AuthenticationController extends Controller
 
     public function register(RegisterRequest $request)
     {
-        $admin = Admin::query()->create([
-            'name'  => $request->name,
+        $client = Client::query()->create([
+            'name' => $request->name,
+            'username' => $request->username,
             'email' => $request->email,
             'password' => Hash::make($request->password)
         ]);
 
-        $token = $admin->createToken('admin')->plainTextToken;
+        $token = $client->createToken('client')->plainTextToken;
 
         return response()->json([
-            'data' =>  [
+            'data' => [
                 'token' => $token,
             ]
         ]);
