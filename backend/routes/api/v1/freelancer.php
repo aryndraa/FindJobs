@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Api\V1\Freelancer\Authentication\AuthenticationController;
+use App\Http\Controllers\Api\V1\Freelancer\ProfileManagement\ProfileManagementController;
 use Illuminate\Support\Facades\Route;
 
 Route::prefix('v1/freelancer/')
@@ -17,5 +18,14 @@ Route::prefix('v1/freelancer/')
         Route::middleware('auth:freelancer')
             ->group(function () {
                 Route::delete('auth/logout', [AuthenticationController::class, 'logout'])->name('logout');
+
+                Route::controller(ProfileManagementController::class)
+                    ->prefix('profile-management')
+                    ->name('profile-management.')
+                    ->group(function () {
+                       Route::get('/', 'index')->name('index');
+                       Route::post('', 'store')->name('store');
+                       Route::post('/update', 'update')->name('update');
+                    });
             });
     });

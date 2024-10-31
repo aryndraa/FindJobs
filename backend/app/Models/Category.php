@@ -13,6 +13,11 @@ class Category extends Model
         'name'
     ];
 
+    public function freelancerSkills()
+    {
+        return $this->hasMany(FreelancerSkill::class);
+    }
+
     public function projectCategories()
     {
         return $this->hasMany(ProjectCategory::class);

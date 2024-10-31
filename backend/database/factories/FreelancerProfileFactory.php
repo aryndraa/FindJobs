@@ -20,7 +20,6 @@ class FreelancerProfileFactory extends Factory
     {
         return [
             'freelancer_id' => Freelancer::query()->inRandomOrder()->first()->id,
-            'category_id'   => Category::query()->inRandomOrder()->first()->id,
             'bio'           => fake()->sentence(),
             'about'         => fake()->paragraph(),
             'phone'         => fake()->phoneNumber(),

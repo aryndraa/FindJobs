@@ -54,10 +54,6 @@ class Freelancer extends Authenticatable
         return $this->hasOne(FreelancerProfile::class);
     }
 
-    public function avatar()
-    {
-        return $this->morphOne(File::class, 'related');
-    }
 
     public function projectBidders()
     {
