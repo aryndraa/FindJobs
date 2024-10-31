@@ -18,6 +18,7 @@ return new class extends Migration
             $table->string('file_type');
             $table->unsignedBigInteger('related_id');
             $table->string('related_type');
+            $table->string('relation_name')->nullable();
             $table->timestamps();
         });
     }

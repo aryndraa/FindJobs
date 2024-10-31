@@ -21,4 +21,14 @@ class ClientProfile extends Model
     {
         return $this->belongsTo(Client::class);
     }
+
+    public function avatar()
+    {
+        return $this->morphOne(File::class, 'related')->where('relation_name', 'avatar');
+    }
+
+    public function backCover()
+    {
+        return $this->morphOne(File::class, 'related')->where('relation_name', 'back_cover');
+    }
 }

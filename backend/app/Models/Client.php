@@ -18,6 +18,11 @@ class Client extends Authenticatable
         'password',
     ];
 
+    public function clientProfile()
+    {
+        return $this->hasOne(ClientProfile::class);
+    }
+
     public function servicevisitors()
     {
         return $this->hasMany(ServiceVisitor::class);
