@@ -32,7 +32,7 @@ export const NavbarNoAccount = () => {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
 
   return (
-    <div className="w-full fixed bg-white">
+    <div className="w-full fixed bg-white z-50">
       <div className="mx-16">
         <div className="flex items-center justify-between py-2">
           <div className="flex items-center justify-between py-2 gap-8">
@@ -53,7 +53,7 @@ export const NavbarNoAccount = () => {
               </ul>
             </nav>
           </div>
-          <div className="flex gap-4">
+          <div className="flex gap-4 ">
             <Link to="/sign-up">
               <button className="border-black text-black border rounded-full text-[13px] py-1 px-6 md:px-4 hover:bg-black hover:text-white transform transition-all ease-in duration-200">
                 Sign Up
@@ -76,7 +76,7 @@ export const NavbarLoggedIn = () => {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
 
   return (
-    <div className="w-full fixed bg-white">
+    <div className="w-full fixed bg-white z-50">
       <div className="mx-16">
         <div className="flex items-center justify-between py-2">
           <div className="flex items-center justify-between py-2 gap-8">
@@ -109,7 +109,7 @@ export const NavbarFreelance = () => {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
 
   return (
-    <div className="w-full fixed bg-white">
+    <div className="w-full fixed bg-white z-50">
       <div className="mx-16">
         <div className="flex items-center justify-between py-2">
           <div className="flex items-center justify-between py-2 gap-8">
