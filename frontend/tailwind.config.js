@@ -11,10 +11,12 @@ module.exports = {
         kuningmuda: "#FFF7DB",
         ungumuda: "#E4DFFB",
         ungu: "#8E62E5",
-        biru: "#A8DBFF"
+        biru: "#A8DBFF",
+        hitam: "#222222"
       },
       fontFamily: {
-        poppins: "Poppins, sans-serif"
+        poppins: "Poppins, sans-serif",
+        lora: "Lora, serif"
       }
     },
   },
