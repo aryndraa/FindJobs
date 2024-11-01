@@ -52,7 +52,6 @@ class ProjectManagementController extends Controller
 
     public function show(Project $project)
     {
-
         $project->load([
             'projectCategories',
             'projectCategories.category',
