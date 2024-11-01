@@ -36,9 +36,7 @@ class ProfileManagementController extends Controller
 
         $profile->load('avatar');
 
-        return response()->json([
-            'data' => $profile,
-        ]);
+        return $profile;
     }
 
     public function update(UpdateProfileRequest $request)
@@ -68,9 +66,7 @@ class ProfileManagementController extends Controller
 
         $profile->load(['client', 'avatar', 'backCover']);
 
-        return response()->json([
-            'data' => $profile,
-        ]);
+        return $profile;
     }
 
 

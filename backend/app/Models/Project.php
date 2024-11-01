@@ -14,6 +14,7 @@ class Project extends Model
         'description',
         'price_min',
         'price_max',
+        'currency',
         'is_completed',
         'bid_status',
     ];
@@ -33,12 +34,8 @@ class Project extends Model
         return $this->hasMany(ProjectBidder::class);
     }
 
-    public function client()
+    public function user()
     {
-        return $this->belongsTo(Client::class);
+        return $this->morphTo();
     }
-
-
-
-
 }

@@ -13,12 +13,13 @@ return new class extends Migration
     {
         Schema::create('projects', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('client_id');
-            $table->foreign('client_id')->references('id')->on('clients');
+            $table->unsignedBigInteger('user_id');
+            $table->string('user_type');
             $table->string('title');
             $table->text('description');
             $table->integer('price_min');
             $table->integer('price_max');
+            $table->string('currency');
             $table->boolean('is_completed')->default(false);
             $table->boolean('bid_status')->default(false);
             $table->timestamps();

@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Resources\Api\V1\User\ProjectManagement;
+namespace App\Http\Resources\Api\V1\Client\ProjectManagement;
 
 use Illuminate\Http\Request;
 use Illuminate\Http\Resources\Json\JsonResource;
@@ -24,10 +24,19 @@ class IndexProjectResource extends JsonResource
             "created_at"         => $this->created_at,
             "project_categories" => $this->projectCategories->map(function ($projectCategory) {
                 return [
-                  "id"   => $projectCategory->category->id ?? null,
-                  "name" => $projectCategory->category->name ?? null,
+                    "id"   => $projectCategory->category->id ?? null,
+                    "name" => $projectCategory->category->name ?? null,
                 ];
             }),
+            "client" => [
+                "id"       => $this->client->id,
+                "username" => $this->client->username,
+                "avatar"   => [
+                    "file_name" => $this->client->clientProfile->avatar->file_name ?? null,
+                    "file_type" => $this->client->clientProfile->avatar->file_type ?? null,
+                    "file_path" => $this->client->clientProfile->avatar->file_url ?? null,
+                ]
+            ]
         ];
     }
 }

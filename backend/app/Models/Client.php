@@ -25,7 +25,7 @@ class Client extends Authenticatable
 
     public function projects()
     {
-        return $this->hasMany(Project::class);
+        return $this->morphMany(Project::class, 'user');
     }
 
     public function servicevisitors()

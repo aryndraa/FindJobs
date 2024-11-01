@@ -54,6 +54,10 @@ class Freelancer extends Authenticatable
         return $this->hasOne(FreelancerProfile::class);
     }
 
+    public function projects()
+    {
+        return $this->morphMany(Project::class, 'user');
+    }
 
     public function projectBidders()
     {
@@ -64,6 +68,8 @@ class Freelancer extends Authenticatable
     {
         return $this->hasMany(Service::class);
     }
+
+
 
     public function sentMessages()
     {
