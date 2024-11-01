@@ -23,6 +23,11 @@ class Client extends Authenticatable
         return $this->hasOne(ClientProfile::class);
     }
 
+    public function projects()
+    {
+        return $this->hasMany(Project::class);
+    }
+
     public function servicevisitors()
     {
         return $this->hasMany(ServiceVisitor::class);

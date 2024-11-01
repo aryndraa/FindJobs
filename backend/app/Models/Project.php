@@ -27,4 +27,18 @@ class Project extends Model
     {
         return $this->hasMany(ProjectCategory::class);
     }
+
+    public function projectsBidders()
+    {
+        return $this->hasMany(ProjectBidder::class);
+    }
+
+    public function client()
+    {
+        return $this->belongsTo(Client::class);
+    }
+
+
+
+
 }

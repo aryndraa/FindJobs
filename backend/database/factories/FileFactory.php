@@ -20,7 +20,7 @@ class FileFactory extends Factory
      */
     public function definition(): array
     {
-        $relatedType = $this->faker->randomElement([Freelancer::class, Client::class, Service::class, Project::class]);
+        $relatedType = $this->faker->randomElement([Freelancer::class, Client::class, Service::class]);
         $relatedId   = $relatedType::query()->inRandomOrder()->value('id');
 
         return [
