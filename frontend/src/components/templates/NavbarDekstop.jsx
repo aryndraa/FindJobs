@@ -32,7 +32,7 @@ export const NavbarNoAccount = () => {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
 
   return (
-    <div className="w-full fixed bg-white">
+    <div className="w-full fixed bg-white lg:z-50">
       <div className="mx-16">
         <div className="flex items-center justify-between py-2">
           <div className="flex items-center justify-between py-2 gap-8">
@@ -76,7 +76,7 @@ export const NavbarLoggedIn = () => {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
 
   return (
-    <div className="w-full fixed bg-white">
+    <div className="w-full fixed bg-white lg:z-50">
       <div className="mx-16">
         <div className="flex items-center justify-between py-2">
           <div className="flex items-center justify-between py-2 gap-8">
@@ -109,7 +109,7 @@ export const NavbarFreelance = () => {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
 
   return (
-    <div className="w-full fixed bg-white">
+    <div className="w-full fixed bg-white lg:z-50">
       <div className="mx-16">
         <div className="flex items-center justify-between py-2">
           <div className="flex items-center justify-between py-2 gap-8">

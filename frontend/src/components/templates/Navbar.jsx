@@ -87,7 +87,7 @@ export const SidebarNoAccount = ({ onClose }) => (
       <ul className="mt-6">
         <div className="text-secondary gap-10">
         <li><Link to="/">Home</Link></li>
-          <li className="mt-6">Find Services</li>
+          <li className="mt-6"><Link to="/service">Find Services</Link></li>
           <li className="mt-6">Find Projects</li>
           <div className="flex justify-between items-center mt-6">
             <li>Category</li>
