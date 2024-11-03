@@ -137,6 +137,7 @@ export const NavbarFreelance = () => {
   );
 };
 
+
 // Komponen umum Logo
 const Logo = () => (
   <div className="flex items-center font-bold gap-1 text-3xl">

@@ -17,7 +17,6 @@ const Navbar = () => {
   const closeSidebar = () => {
     setSidebar(null);
   };
-  
 
   return (
     <nav className="bg-white p-4 shadow-sm fixed w-full top-0 z-40 lg:hidden">
@@ -30,7 +29,7 @@ const Navbar = () => {
 
         {/* Logo */}
         <div className="flex items-center space-x-1">
-          <img src={logo} className="w-16 -mr-5"/>
+          <img src={logo} className="w-16 -mr-5" />
           <span className="text-2xl font-bold">FindJobs.</span>
         </div>
 
@@ -43,7 +42,7 @@ const Navbar = () => {
       )}
       {sidebar === "freelancer" && <SidebarFreelancer onClose={closeSidebar} />}
 
-        {/* <div className="mt-4 p-4 rounded-md shadow-sm">
+      {/* <div className="mt-4 p-4 rounded-md shadow-sm">
           <div className="flex items-center border-b pb-2 mb-2">
             <FaSearch className="text-gray-500 mr-2" />
             <input
@@ -86,9 +85,15 @@ export const SidebarNoAccount = ({ onClose }) => (
       <div className="border-b-2 text-gray-400 mt-5"></div>
       <ul className="mt-6">
         <div className="text-secondary gap-10">
-        <li><Link to="/">Home</Link></li>
-          <li className="mt-6"><Link to="/service">Find Services</Link></li>
-          <li className="mt-6"><Link to="/project">Find Projects</Link></li>
+          <li>
+            <Link to="/">Home</Link>
+          </li>
+          <li className="mt-6">
+            <Link to="/service">Find Services</Link>
+          </li>
+          <li className="mt-6">
+            <Link to="/project">Find Projects</Link>
+          </li>
           <div className="flex justify-between items-center mt-6">
             <li>Category</li>
             <FiPlus />
@@ -100,7 +105,6 @@ export const SidebarNoAccount = ({ onClose }) => (
       </ul>
     </div>
   </div>
-  
 );
 
 // Komponen untuk Sidebar Setelah Login
@@ -140,8 +144,8 @@ export const SidebarWithAccount = ({ onClose }) => (
           <div className="border-b-2 text-gray-400 mt-5"></div>
           <li className="mt-6">Profile</li>
           <div className="flex justify-between items-center mt-6">
-          <li>Message</li>
-          <span className="p-2 rounded-full bg-hijaumuda"></span>
+            <li>Message</li>
+            <span className="p-2 rounded-full bg-hijaumuda"></span>
           </div>
           <li className="mt-6">Notifications</li>
           <li className="mt-6">Cart</li>
@@ -190,8 +194,8 @@ export const SidebarFreelancer = ({ onClose }) => (
           <div className="border-b-2 text-gray-400 mt-5"></div>
           <li className="mt-6">Profile</li>
           <div className="flex justify-between items-center mt-6">
-          <li>Message</li>
-          <span className="p-2 rounded-full bg-hijaumuda"></span>
+            <li>Message</li>
+            <span className="p-2 rounded-full bg-hijaumuda"></span>
           </div>
           <li className="mt-6">Notifications</li>
         </div>

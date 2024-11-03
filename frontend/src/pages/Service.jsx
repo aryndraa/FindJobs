@@ -5,10 +5,23 @@ import CategoryFilter from "../components/molecules/CategoryFilter";
 import SearchBar from "../components/molecules/SearchBar";
 import SortingOptions from "../components/molecules/SortingOptions";
 import ServiceCard from "../components/molecules/ServiceCard";
+import BreadCrumbs from "../components/molecules/BreadCrumbs";
 
 const Service = () => {
+  const breadLink = [
+    {
+      url: "/",
+      name: "home",
+    },
+    {
+      url: "/service",
+      name: "service",
+    },
+  ];
+
   return (
     <div className="mx-7 lg:mx-16 py-24">
+      <BreadCrumbs breadLink={breadLink} />
       <HeroSection />
       <CategoryFilter />
       <div className="flex justify-between items-center flex-col lg:flex-row">
