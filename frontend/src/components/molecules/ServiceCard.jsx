@@ -1,7 +1,8 @@
 import React from "react";
-import { AiFillHeart, AiOutlineTeam } from "react-icons/ai"; 
+import { AiFillHeart, AiOutlineTeam } from "react-icons/ai";
+import { FaEye } from "react-icons/fa"; // Import eye icon
 import { MdOutlineFavoriteBorder } from "react-icons/md";
-
+import { GoPeople } from "react-icons/go";
 const ServiceCard = () => {
   // Array of service card data
   const serviceData = [

@@ -8,7 +8,7 @@ import ServiceCard from "../components/molecules/ServiceCard";
 
 const Service = () => {
   return (
-    <div className="mx-16 py-24">
+    <div className="mx-7 lg:mx-16 py-24">
       <HeroSection />
       <CategoryFilter />
       <div className="flex justify-between items-center flex-col lg:flex-row">
