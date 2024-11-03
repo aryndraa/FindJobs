@@ -8,19 +8,20 @@ import ServiceCard from '../components/molecules/ServiceCard';
 
 const Service = () => {
   return (
-    <div className="mx-16 py-24">
+    <div className="mx-7 lg:mx-16 py-24">
       <HeroSection />
       <CategoryFilter />
       <div className="flex justify-between items-center flex-col lg:flex-row">
       <SearchBar />
       <SortingOptions />
       </div>
+      <div>
       <h2 className="text-xl font-bold mt-6">12,000 Results</h2>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mt-4">
         <ServiceCard />
         <ServiceCard />
         <ServiceCard />
-        {/* Add more <ServiceCard /> as needed */}
+      </div>
       </div>
     </div>
   );

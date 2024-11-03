@@ -4,7 +4,7 @@ import CardCategory from '../molecules/CardCategory'
 const CategoryDekstop = () => {
   return (
     <div>
-        <div className="flex gap-10">
+        <div className="flex justify-between gap-10 ">
             <CardCategory />
             <CardRecomendedJobs />
         </div>

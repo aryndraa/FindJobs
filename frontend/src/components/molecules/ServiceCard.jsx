@@ -1,12 +1,14 @@
 // ServiceCard.js
 import React from "react";
-import { AiFillHeart, AiOutlineTeam } from "react-icons/ai"; // Import heart icon
+import { AiFillHeart, AiOutlineTeam } from "react-icons/ai";
 import { FaEye } from "react-icons/fa"; // Import eye icon
 import { MdOutlineFavoriteBorder } from "react-icons/md";
 import { GoPeople } from "react-icons/go";
+import { Link } from "react-router-dom";
 const ServiceCard = () => {
   return (
     <div className="border rounded-lg p-4 transition">
+      <Link to="/details-service">
       <div className="flex justify-between items-center gap-3 mb-4">
         <div className="bg-cover h-10 w-10">
           <img
@@ -22,6 +24,7 @@ const ServiceCard = () => {
           <MdOutlineFavoriteBorder className="text-primary text-base hover:text-white" />
         </div>
       </div>
+      </Link>
       <img
         src="https://img.freepik.com/free-photo/computer-program-coding-screen_53876-138060.jpg?t=st=1730483883~exp=1730487483~hmac=d54d5df263f8d9f67e81d267ad00c529a82401f6cec4614279a2a186e17d5061&w=740" // Replace with your image path
         alt="Service"
