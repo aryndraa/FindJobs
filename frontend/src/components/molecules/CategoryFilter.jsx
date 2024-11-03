@@ -30,6 +30,7 @@ const CategoryFilter = () => {
           {category}
         </Link>
       ))}
+
     </div>
     </div>
   );

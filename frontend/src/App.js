@@ -7,6 +7,7 @@ import Service from "./pages/Service";
 import ScrollToTop from "./components/molecules/ScrollToTop";
 import DetailsService from "./pages/DetailsService";
 import Project from "./pages/Project";
+import DetailsProject from "./pages/DetailsProject";
 function App() {
   return (
    <Router>
@@ -18,6 +19,7 @@ function App() {
     <Route path="/service" element={<Service />} />
     <Route path="/details-service" element={<DetailsService />} />
     <Route path="/project" element={<Project />} />
+    <Route path="/details-project" element={<DetailsProject />} />
     </Routes>
     <Footer/>
    </Router>
