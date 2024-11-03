@@ -21,6 +21,9 @@ class IndexProjectResource extends JsonResource
             "description"        => Str::limit($this->description, 50),
             "price_min"          => $this->price_min,
             "price_max"          => $this->price_max,
+            "currency"           => $this->currency,
+            "is_completed"       => $this->is_completed,
+            "bid_status"         => $this->bid_status,
             "created_at"         => $this->created_at,
             "project_categories" => $this->projectCategories->map(function ($projectCategory) {
                 return [
@@ -28,6 +31,15 @@ class IndexProjectResource extends JsonResource
                   "name" => $projectCategory->category->name ?? null,
                 ];
             }),
+            "user" => [
+                "id" => $this->user->id,
+                "name" =>$this->user->name,
+                "avatar" => [
+                    "file_name" => $this->user->profile->avatar->file_name ?? null,
+                    "file_path" => $this->user->profile->avatar->file_path ?? null,
+                    "file_type" => $this->user->profile->avatar->file_type ?? null,
+                ],
+            ]
         ];
     }
 }

@@ -32,17 +32,17 @@ class ShowProjectResource extends JsonResource
                 "price_min"  => $this->price_min,
                 "price_max"  => $this->price_max,
             ],
-            "client" => [
-                "id"       => $this->client->id,
-                "username" => $this->client->username,
-                "email"    => $this->client->email,
+            "user" => [
+                "id"       => $this->user->id,
+                "username" => $this->user->username,
+                "email"    => $this->user->email,
                 "avatar"   => [
-                    "file_name" => $this->client->clientProfile->avatar->file_name ?? null,
-                    "file_type" => $this->client->clientProfile->avatar->file_type ?? null,
-                    "file_path" => $this->client->clientProfile->avatar->file_url ?? null,
+                    "file_name" => $this->user->clientProfile->avatar->file_name ?? null,
+                    "file_type" => $this->user->clientProfile->avatar->file_type ?? null,
+                    "file_path" => $this->user->clientProfile->avatar->file_url ?? null,
                 ]
             ],
-            "client_other_projects" => $this->client->projects->map(function ($project) {
+            "user_other_projects" => $this->user->projects->map(function ($project) {
                 return [
                     "id"          => $project->id,
                     "title"       => $project->title,

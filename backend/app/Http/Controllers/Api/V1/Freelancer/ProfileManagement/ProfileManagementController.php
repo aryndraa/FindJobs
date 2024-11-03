@@ -15,15 +15,15 @@ class ProfileManagementController extends Controller
 {
     public function index()
     {
-        $client = auth()->id();
+        $user = auth()->id();
         $profile = Freelancer::query()
-            ->where('id', $client)
+            ->where('id', $user)
             ->with([
-                'freelancerProfile',
-                'freelancerProfile.avatar',
-                "freelancerProfile.backCover",
-                "freelancerProfile.freelancerSkills",
-                "freelancerProfile.freelancerSkills.category"
+                'profile',
+                'profile.avatar',
+                "profile.backCover",
+                "profile.freelancerSkills",
+                "profile.freelancerSkills.category"
             ])
             ->first();
 
@@ -46,7 +46,11 @@ class ProfileManagementController extends Controller
             ]);
         }
 
-        $freelancer->load(['freelancerProfile', 'freelancerProfile.avatar', "freelancerProfile.backCover", "freelancerProfile.freelancerSkills"]);
+        $freelancer->load([
+            'profile',
+            'profile.avatar',
+            'profile.backCover',
+            'profile.freelancerSkills']);
 
         return response()->json([
             'data' => $freelancer,

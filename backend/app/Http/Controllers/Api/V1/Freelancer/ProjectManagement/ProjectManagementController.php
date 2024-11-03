@@ -1,21 +1,22 @@
 <?php
 
-namespace App\Http\Controllers\Api\V1\Client\ProjectManagement;
+namespace App\Http\Controllers\Api\V1\Freelancer\ProjectManagement;
 
 use App\Http\Controllers\Controller;
-use App\Http\Requests\Api\V1\Client\ProjectManagement\StoreProjectRequest;
-use App\Http\Requests\Api\V1\Client\ProjectManagement\UpdateProjectRequest;
-use App\Http\Resources\Api\V1\Client\ProjectManagement\IndexProjectResource;
-use App\Http\Resources\Api\V1\Client\ProjectManagement\MyProjectResource;
-use App\Http\Resources\Api\V1\User\ProjectManagement\ShowProjectResource;
+use App\Http\Requests\Api\V1\Freelancer\ProjectManagement\StoreProjectRequest;
+use App\Http\Requests\Api\V1\Freelancer\ProjectManagement\UpdateProjectRequest;
+use App\Http\Resources\Api\V1\Freelancer\ProjectManagement\IndexProjectResource;
+use App\Http\Resources\Api\V1\Freelancer\ProjectManagement\MyProjectResource;
 use App\Models\Client;
 use App\Models\Freelancer;
 use App\Models\Project;
+use App\Models\ProjectBidder;
 use App\Models\ProjectCategory;
 use Illuminate\Http\Request;
 
 class ProjectManagementController extends Controller
 {
+
     public function index(Request $request)
     {
         $keyword   = $request->input('keyword');
@@ -42,6 +43,7 @@ class ProjectManagementController extends Controller
 
         return IndexProjectResource::collection($projects);
     }
+
 
     public function myProjects()
     {
@@ -137,4 +139,16 @@ class ProjectManagementController extends Controller
             "message" => "Queue Opened",
         ]);
     }
+
+    public function bidProject(Project $project)
+    {
+        $projectBidder =  new ProjectBidder();
+
+        $projectBidder->project()->associate($project);
+        $projectBidder->freelancer()->associate(auth()->user());
+        $projectBidder->save();
+
+        return $projectBidder;
+    }
+
 }
