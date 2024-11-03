@@ -1,22 +1,22 @@
 <?php
 
-namespace App\Http\Controllers\Api\V1\Client\ProjectManagement;
+namespace App\Http\Controllers\Api\V1\Freelancer\ProjectManagement;
 
 use App\Http\Controllers\Controller;
-use App\Http\Requests\Api\V1\Client\ProjectManagement\StoreProjectRequest;
-use App\Http\Requests\Api\V1\Client\ProjectManagement\UpdateProjectRequest;
-use App\Http\Resources\Api\V1\Client\ProjectManagement\IndexProjectResource;
-use App\Http\Resources\Api\V1\Client\ProjectManagement\MyProjectResource;
-use App\Http\Resources\Api\V1\User\ProjectManagement\ShowProjectResource;
+use App\Http\Requests\Api\V1\Freelancer\ProjectManagement\StoreProjectRequest;
+use App\Http\Requests\Api\V1\Freelancer\ProjectManagement\UpdateProjectRequest;
+use App\Http\Resources\Api\V1\Freelancer\ProjectManagement\IndexProjectResource;
+use App\Http\Resources\Api\V1\Freelancer\ProjectManagement\MyProjectResource;
 use App\Models\Client;
 use App\Models\Freelancer;
 use App\Models\Project;
+use App\Models\ProjectBidder;
 use App\Models\ProjectCategory;
-use App\Models\ProjectHistory;
 use Illuminate\Http\Request;
 
 class ProjectManagementController extends Controller
 {
+
     public function index(Request $request)
     {
         $keyword   = $request->input('keyword');
@@ -44,11 +44,12 @@ class ProjectManagementController extends Controller
         return IndexProjectResource::collection($projects);
     }
 
+
     public function myProjects()
     {
         $user     = auth()->user();
         $projects = $user->projects()
-                ->with('projectCategories', 'projectBidders')
+            ->with('projectCategories', 'projectBidders')
             ->simplePaginate(10);
 
         return MyProjectResource::collection($projects);
@@ -139,33 +140,14 @@ class ProjectManagementController extends Controller
         ]);
     }
 
-    public function acceptBid(Project $project, Freelancer $freelancer)
+    public function bidProject(Project $project)
     {
-        $user      = auth()->user();
-        $existingBid = ProjectHistory::query()
-            ->where('client_id', $user->id)
-            ->where('project_id', $project->id)
-            ->where('freelancer_id', $freelancer->id)
-            ->first();
+        $projectBidder =  new ProjectBidder();
 
-        if ($existingBid) {
-            $existingBid->delete();
+        $projectBidder->project()->associate($project);
+        $projectBidder->freelancer()->associate(auth()->user());
+        $projectBidder->save();
 
-            return response()->json([
-                "message" => "Bid Removed",
-            ]);
-        }
-
-        $acceptBid = new ProjectHistory();
-
-        $acceptBid->client()->associate($user);
-        $acceptBid->freelancer()->associate($freelancer->id);
-        $acceptBid->project()->associate($project->id);
-        $acceptBid->save();
-
-        return response()->json([
-            "message" => "Bid Accepted",
-        ]);
-
+        return $projectBidder;
     }
 }

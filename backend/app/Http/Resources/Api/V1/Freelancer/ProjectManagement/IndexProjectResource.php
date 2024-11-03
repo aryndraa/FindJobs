@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Resources\Api\V1\Client\ProjectManagement;
+namespace App\Http\Resources\Api\V1\Freelancer\ProjectManagement;
 
 use Illuminate\Http\Request;
 use Illuminate\Http\Resources\Json\JsonResource;

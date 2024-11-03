@@ -35,10 +35,12 @@ Route::prefix('v1/client/')
                     ->name('project-management.')
                     ->group(function () {
                         Route::get('/', 'index')->name('index');
+                        Route::get('/my-projects', 'myProjects')->name('myProjects');
                         Route::post('', 'store')->name('store');
                         Route::post('update/{project}', 'update')->name('update');
                         Route::post('complete/{project}', 'isComplete')->name('isComplete');
                         Route::post('bid-status/{project}', 'bidStatus')->name('bidStatus');
+                        Route::post('accept/{project}/{freelancer}', 'acceptBid')->name('acceptBid');
                     });
             });
     });

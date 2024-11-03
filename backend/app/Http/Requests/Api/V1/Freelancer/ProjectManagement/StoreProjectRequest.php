@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Requests\Api\V1\Client\ProjectManagement;
+namespace App\Http\Requests\Api\V1\Freelancer\ProjectManagement;
 
 use Illuminate\Foundation\Http\FormRequest;
 
@@ -26,7 +26,7 @@ class StoreProjectRequest extends FormRequest
             "description"  => ['required', 'string'],
             "price_min"    => ['required', 'integer', 'min:1'],
             "price_max"    => ['required', 'integer', 'gt:price_min'],
-            "currency"     => ['required', 'string', 'in:USD,EUR,JP,IDR'],
+            "currency"     => ['required', 'string', 'in:USD,EUR,JP,RP'],
             "categories"   => ['required', 'array'],
             "categories.*" => ['required', 'exists:categories,id'],
         ];

@@ -18,7 +18,7 @@ class Client extends Authenticatable
         'password',
     ];
 
-    public function clientProfile()
+    public function profile()
     {
         return $this->hasOne(ClientProfile::class);
     }

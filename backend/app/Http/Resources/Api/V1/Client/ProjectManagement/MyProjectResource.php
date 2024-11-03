@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 use Illuminate\Http\Resources\Json\JsonResource;
 use Illuminate\Support\Str;
 
-class IndexProjectResource extends JsonResource
+class MyProjectResource extends JsonResource
 {
     /**
      * Transform the resource into an array.
@@ -31,15 +31,7 @@ class IndexProjectResource extends JsonResource
                     "name" => $projectCategory->category->name ?? null,
                 ];
             }),
-            "user" => [
-                "id" => $this->user->id,
-                "name" =>$this->user->name,
-                "avatar" => [
-                    "file_name" => $this->user->profile->avatar->file_name ?? null,
-                    "file_path" => $this->user->profile->avatar->file_path ?? null,
-                    "file_type" => $this->user->profile->avatar->file_type ?? null,
-                ],
-            ]
+            
         ];
     }
 }
