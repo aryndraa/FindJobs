@@ -2,7 +2,7 @@ import React from "react";
 
 const CardCta = () => {
   return (
-    <div className="mt-8 lg:my-5">
+    <div className="mt-8 lg:my-5 pb-10">
       <div className="flex justify-center items-center gap-10 lg:gap-32 lg:mb-12">
         <div>
           <h1 className="text-4xl lg:text-5xl font-semibold">

@@ -5,6 +5,8 @@ import Footer from "./components/templates/Footer";
 import Home from "./pages/Home";
 import Service from "./pages/Service";
 import ScrollToTop from "./components/molecules/ScrollToTop";
+import CategoryFilter from "./components/molecules/CategoryFilter";
+import CategoryResults from "./pages/CategoryResults"
 function App() {
   return (
    <Router>
@@ -14,6 +16,8 @@ function App() {
     <Routes>
     <Route path="/" element={<Home />} />
     <Route path="/service" element={<Service />} />
+    <Route path="/service" element={<Service />} />
+        <Route path="/category-results" element={<CategoryResults />} />
     </Routes>
     <Footer/>
    </Router>
