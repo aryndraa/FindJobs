@@ -6,7 +6,9 @@ const SectionAboutService = () => {
   return (
     <div className='flex gap-3 mt-6 flex-col lg:flex-row'>
         <AboutService/>
+        <div>
         <CardContactPerson/>
+        </div>
     </div>
   )
 }
