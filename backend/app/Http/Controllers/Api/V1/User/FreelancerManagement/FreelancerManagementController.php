@@ -11,9 +11,14 @@ class FreelancerManagementController extends Controller
 {
     public function index()
     {
-        $freelancers = Freelancer::with(['profile', 'profile.avatar', 'profile.backCover'])
+        $freelancers = Freelancer::with(['profile', 'profile.avatar', 'profile.backCover', 'projectAcceptedBidders'])
             ->simplePaginate(100);
 
-        return IndexFreelancerResoource::collection($freelancers);
+        foreach ($freelancers as $freelancer) {
+            $freelancer->total_project = $freelancer->projectAcceptedBidders->count();
+        }
+
+        return $freelancers;
     }
+
 }

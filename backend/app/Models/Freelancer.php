@@ -64,11 +64,15 @@ class Freelancer extends Authenticatable
         return $this->hasMany(ProjectBidder::class);
     }
 
+    public function projectAcceptedBidders()
+    {
+        return $this->hasMany(ProjectHistory::class);
+    }
+
     public function services()
     {
         return $this->hasMany(Service::class);
     }
-
 
 
     public function sentMessages()
