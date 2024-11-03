@@ -47,7 +47,7 @@ class ProjectManagementController extends Controller
     {
         $user     = auth()->user();
         $projects = $user->projects()
-            ->with('projectCategories', 'projectBidders')
+                ->with('projectCategories', 'projectBidders')
             ->simplePaginate(10);
 
         return MyProjectResource::collection($projects);

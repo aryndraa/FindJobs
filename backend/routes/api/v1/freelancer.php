@@ -40,7 +40,6 @@ Route::prefix('v1/freelancer/')
                         Route::post('complete/{project}', 'isComplete')->name('isComplete');
                         Route::post('bid-status/{project}', 'bidStatus')->name('bidStatus');
                         Route::post('bid/{project}', 'bidProject')->name('bidProject');
-
                     });
             });
     });
