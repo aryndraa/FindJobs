@@ -3,6 +3,7 @@ import { AiFillHeart, AiOutlineTeam } from "react-icons/ai";
 import { FaEye } from "react-icons/fa"; // Import eye icon
 import { MdOutlineFavoriteBorder } from "react-icons/md";
 import { GoPeople } from "react-icons/go";
+import { Link } from "react-router-dom";
 const ServiceCard = () => {
   // Array of service card data
   const serviceData = [
@@ -61,7 +62,9 @@ const ServiceCard = () => {
             className="rounded-lg w-full h-40 object-cover"
           />
           <div className="mt-3">
+            <Link to="/details-service">
             <h3 className="text-xl font-bold">{service.title}</h3>
+            </Link>
             <div className="flex items-center gap-5 mt-3 mb-3 font-poppins">
               <div className="flex gap-2 items-center">
                 <AiFillHeart className="text-primary text-[15px]" />
