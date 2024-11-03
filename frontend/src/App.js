@@ -8,6 +8,7 @@ import ScrollToTop from "./components/molecules/ScrollToTop";
 import DetailsService from "./pages/DetailsService";
 import CategoryFilter from "./components/molecules/CategoryFilter";
 import CategoryResults from "./pages/CategoryResults"
+import Project from "./pages/Project";
 function App() {
   return (
    <Router>
@@ -16,10 +17,11 @@ function App() {
     <NavbarDekstop/>
     <Routes>
     <Route path="/" element={<Home />} />
+    <Route path="/project" element={<Project />} />
     <Route path="/details-service" element={<DetailsService />} />
     <Route path="/service" element={<Service />} />
-    <Route path="/service" element={<Service />} />
-        <Route path="/category-results" element={<CategoryResults />} />
+    <Route path="/service-category" element={<CategoryResults />} />
+    <Route path="/project-category" element={<CategoryResults />} />
     </Routes>
     <Footer/>
    </Router>

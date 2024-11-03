@@ -1,22 +1,25 @@
-import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
+import { useLocation } from "react-router-dom";
 
 const CategoryFilter = () => {
   const [selectedCategories, setSelectedCategories] = useState([]);
   const navigate = useNavigate();
+  const location = useLocation();
+  console.log(location);
 
   const categories = [
-    'Software Developer',
-    'Design Graphic',
-    'UI/UX Designer',
-    'Copy Writer',
-    'Logo Branding',
-    'Video Editor',
-    'Photo Editor',
-    'Architecture',
-    'Photografer',
-    'Videografer',
-    'More',
+    "Software Developer",
+    "Design Graphic",
+    "UI/UX Designer",
+    "Copy Writer",
+    "Logo Branding",
+    "Video Editor",
+    "Photo Editor",
+    "Architecture",
+    "Photografer",
+    "Videografer",
+    "More",
   ];
 
   const handleCategoryClick = (category) => {
@@ -30,7 +33,11 @@ const CategoryFilter = () => {
   };
 
   const handleSearch = () => {
-    navigate('/category-results', { state: { selectedCategories } });
+    if (location.pathname === "/service") {
+      navigate("/service-category", { state: { selectedCategories } });
+    } else if (location.pathname === "/project") {
+      navigate("/project-category", { state: { selectedCategories } });
+    }
   };
 
   return (
@@ -43,8 +50,8 @@ const CategoryFilter = () => {
             onClick={() => handleCategoryClick(category)}
             className={`px-4 py-2 border rounded-md ${
               selectedCategories.includes(category)
-                ? 'text-green-600 border-green-500'
-                : 'border-gray-300'
+                ? "text-green-600 border-green-500"
+                : "border-gray-300"
             } hover:bg-gray-100`}
           >
             {category}
