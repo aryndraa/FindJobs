@@ -78,7 +78,7 @@ class ServiceManagementController extends Controller
         return ShowServiceResource::make($service);
     }
 
-    public function favorite(Service $service)
+    public function like(Service $service)
     {
         $user     = auth()->user();
         $favorite = ServiceLike::where('service_id', $service->id)

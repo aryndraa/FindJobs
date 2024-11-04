@@ -31,6 +31,7 @@ Route::prefix('v1/user/')
             ->name('freelancer-management.')
             ->group(function () {
                 Route::get('/', 'index')->name("index");
+                Route::get('/{freelancer}', 'show')->name("show");
             });
 
         Route::controller(ServiceManagementController::class)

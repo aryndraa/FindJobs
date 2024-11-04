@@ -22,7 +22,10 @@ class IndexFreelancerResoource extends JsonResource
                 "file_name" => $this->profile->avatar->file_name ?? null,
                 "file_path" => $this->profile->avatar->file_path ?? null,
                 "file_type" => $this->profile->avatar->file_type ?? null,
-            ]
+            ],
+            "total_project" => $this->total_projects,
+            "total_likes" => $this->total_likes,
+            "total_favorites" => $this->total_favorites
         ];
     }
 }

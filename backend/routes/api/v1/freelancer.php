@@ -50,7 +50,7 @@ Route::prefix('v1/freelancer/')
                         Route::get('/', 'index')->name("index");
                         Route::get('/my-services', 'myService')->name("myService");
                         Route::get('/{service}', 'show')->name("show");
-                        Route::get('/favorite/{service}', 'favorite')->name("favorite");
+                        Route::get('/like/{service}', 'like')->name("like");
                         Route::post('', 'store')->name("store");
                         Route::post('update/{service}', 'update')->name("update");
                         Route::post('delete/{service}', 'destroy')->name("destroy");

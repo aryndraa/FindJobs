@@ -41,6 +41,8 @@ Route::prefix('v1/client/')
                         Route::post('update/{project}', 'update')->name('update');
                         Route::post('complete/{project}', 'isComplete')->name('isComplete');
                         Route::post('bid-status/{project}', 'bidStatus')->name('bidStatus');
+                        Route::get('list-bidders/{project}', 'listBidders')->name('listBidders');
+                        Route::post('accept/{project}/{freelancer}', 'acceptBid')->name('acceptBid');
                     });
 
                 Route::controller(ServiceManagementController::class)
@@ -49,7 +51,7 @@ Route::prefix('v1/client/')
                     ->group(function () {
                         Route::get('/', 'index')->name("index");
                         Route::get('/{service}', 'show')->name("show");
-                        Route::get('/favorite/{service}', 'favorite')->name("favorite");
+                        Route::get('/like/{service}', 'like')->name("like");
                     });
             });
     });
