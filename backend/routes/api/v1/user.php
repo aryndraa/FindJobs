@@ -3,6 +3,7 @@
 use App\Http\Controllers\Api\V1\User\Category\CategoryController;
 use App\Http\Controllers\Api\V1\User\FreelancerManagement\FreelancerManagementController;
 use App\Http\Controllers\Api\V1\User\ProjectManagement\ProjectManagementController;
+use App\Http\Controllers\Api\V1\User\ServiceManagement\ServiceManagementController;
 use Illuminate\Support\Facades\Route;
 
 Route::prefix('v1/user/')
@@ -30,5 +31,13 @@ Route::prefix('v1/user/')
             ->name('freelancer-management.')
             ->group(function () {
                 Route::get('/', 'index')->name("index");
+            });
+
+        Route::controller(ServiceManagementController::class)
+            ->prefix('service-management')
+            ->name('service-management.')
+            ->group(function () {
+                Route::get('/', 'index')->name("index");
+                Route::get('/{service}', 'show')->name("show");
             });
     });

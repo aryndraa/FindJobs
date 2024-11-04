@@ -74,6 +74,10 @@ class Freelancer extends Authenticatable
         return $this->hasMany(Service::class);
     }
 
+    public function freelancerStar()
+    {
+        return $this->hasMany(FreelancerStar::class);
+    }
 
     public function sentMessages()
     {
