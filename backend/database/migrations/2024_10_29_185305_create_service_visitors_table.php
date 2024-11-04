@@ -14,9 +14,9 @@ return new class extends Migration
         Schema::create('service_visitors', function (Blueprint $table) {
             $table->id();
             $table->unsignedBigInteger('service_id');
-            $table->unsignedBigInteger('client_id');
             $table->foreign('service_id')->references('id')->on('services');
-            $table->foreign('client_id')->references('id')->on('clients')->onDelete('cascade');
+            $table->unsignedBigInteger('user_id');
+            $table->string('user_type');
             $table->timestamps();
         });
     }

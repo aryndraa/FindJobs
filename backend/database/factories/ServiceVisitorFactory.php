@@ -3,6 +3,7 @@
 namespace Database\Factories;
 
 use App\Models\Client;
+use App\Models\Freelancer;
 use App\Models\Service;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
@@ -18,9 +19,13 @@ class ServiceVisitorFactory extends Factory
      */
     public function definition(): array
     {
+        $userType = $this->faker->randomElement([Freelancer::class, Client::class]);
+        $userId   = $userType::query()->inRandomOrder()->value('id');
+
         return [
             'service_id' => Service::query()->inRandomOrder()->first()->id,
-            'client_id'  => Client::query()->inRandomOrder()->first()->id,
+            'user_id' => $userId,
+            'user_type' => $userType,
         ];
     }
 }

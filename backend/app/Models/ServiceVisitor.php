@@ -14,8 +14,8 @@ class ServiceVisitor extends Model
         return $this->belongsTo(Service::class);
     }
 
-    public function client()
+    public function user()
     {
-        return $this->belongsTo(Client::class);
+        return $this->morphTo();
     }
 }

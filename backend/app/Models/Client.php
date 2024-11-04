@@ -30,7 +30,7 @@ class Client extends Authenticatable
 
     public function servicevisitors()
     {
-        return $this->hasMany(ServiceVisitor::class);
+        return $this->morphMany(ServiceVisitor::class, 'user');
     }
 
     public function sentMessages()

@@ -74,6 +74,11 @@ class Freelancer extends Authenticatable
         return $this->hasMany(Service::class);
     }
 
+    public function servicevisitors()
+    {
+        return $this->morphMany(ServiceVisitor::class, 'user');
+    }
+
     public function freelancerStar()
     {
         return $this->hasMany(FreelancerStar::class);

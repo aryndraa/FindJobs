@@ -4,6 +4,7 @@
 use App\Http\Controllers\Api\V1\Client\Authentication\AuthenticationController;
 use App\Http\Controllers\Api\V1\Client\ProfileManagement\ProfileManagementController;
 use App\Http\Controllers\Api\V1\Client\ProjectManagement\ProjectManagementController;
+use App\Http\Controllers\Api\V1\Client\ServiceManagement\ServiceManagementController;
 use Illuminate\Support\Facades\Route;
 
 Route::prefix('v1/client/')
@@ -40,6 +41,15 @@ Route::prefix('v1/client/')
                         Route::post('update/{project}', 'update')->name('update');
                         Route::post('complete/{project}', 'isComplete')->name('isComplete');
                         Route::post('bid-status/{project}', 'bidStatus')->name('bidStatus');
+                    });
+
+                Route::controller(ServiceManagementController::class)
+                    ->prefix('service-management')
+                    ->name('service-management.')
+                    ->group(function () {
+                        Route::get('/', 'index')->name("index");
+                        Route::get('/{service}', 'show')->name("show");
+                        Route::get('/favorite/{service}', 'favorite')->name("favorite");
                     });
             });
     });
