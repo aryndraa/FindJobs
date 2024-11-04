@@ -8,6 +8,8 @@ import {
 import { IoCartOutline, IoChatboxEllipsesOutline } from "react-icons/io5";
 import { Link } from "react-router-dom";
 import logo from "../../assets/logo.svg";
+import { RiServiceLine } from "react-icons/ri";
+import { AiOutlineProject } from "react-icons/ai";
 
 // Komponen Navbar utama yang memeriksa nilai header dan menampilkan komponen yang sesuai
 const NavbarDekstop = () => {
@@ -162,7 +164,7 @@ const SearchBar = () => (
 
 const DropdownEksplore = ({ isDropdownOpen, setIsDropdownOpen }) => {
   const toggleDropdown = () => {
-    setIsDropdownOpen(!isDropdownOpen); // Toggle the dropdown on click
+    setIsDropdownOpen(!isDropdownOpen);
   };
 
   return (
@@ -179,17 +181,19 @@ const DropdownEksplore = ({ isDropdownOpen, setIsDropdownOpen }) => {
         {isDropdownOpen ? <IoIosArrowUp /> : <IoIosArrowDown />}
       </span>
       {isDropdownOpen && (
-        <ul className="absolute top-10 left-0 w-32 bg-white border rounded-lg py-2 z-50 shadow-lg transition-all duration-300 ease-in-out">
+        <ul className="absolute top-10 left-0 w-36 bg-white border rounded-lg py-2 z-50 shadow-lg transition-all duration-300 ease-in-out">
           <Link to="/service">
-            <div>
-              <li className="px-4 py-2 hover:bg-gray-100 transition-colors duration-150">
+            <div  className="px-4 py-2 hover:bg-gray-100 transition-colors duration-150 flex items-center gap-1">
+            <RiServiceLine />
+              <li>
                 Service
               </li>
             </div>
           </Link>
           <Link to="/project">
-            <div>
-              <li className="px-4 py-2 hover:bg-gray-100 transition-colors duration-150">
+            <div className="px-4 py-2 hover:bg-gray-100 transition-colors duration-150 flex items-center gap-1">
+            <AiOutlineProject />
+              <li>
                 Project
               </li>
             </div>
@@ -210,11 +214,13 @@ const UserProfile = () => (
       <IoChatboxEllipsesOutline className="text-2xl" />
     </Link>
     <Link to="/profile">
-      <img
-        src="https://i.pinimg.com/564x/12/41/7b/12417b5cfabdeffcb0c55231aca15387.jpg"
-        alt="Profile"
-        className="w-10 h-10 rounded-full"
-      />
+    <div className="bg-cover w-10 h-10">
+          <img
+            src="https://i.pinimg.com/564x/12/41/7b/12417b5cfabdeffcb0c55231aca15387.jpg"
+            alt="User Avatar"
+            className="rounded-full h-full w-full object-cover"
+          />
+        </div>
     </Link>
   </div>
 );
@@ -230,11 +236,13 @@ const ProfileFreelancer = () => (
       <IoChatboxEllipsesOutline className="text-2xl" />
     </Link>
     <Link to="/profile">
-      <img
-        src="https://i.pinimg.com/564x/12/41/7b/12417b5cfabdeffcb0c55231aca15387.jpg"
-        alt="Profile"
-        className="w-10 h-10 rounded-full"
-      />
+    <div className="bg-cover w-10 h-10">
+          <img
+            src="https://i.pinimg.com/564x/12/41/7b/12417b5cfabdeffcb0c55231aca15387.jpg"
+            alt="User Avatar"
+            className="rounded-full h-full w-full object-cover"
+          />
+        </div>
     </Link>
   </div>
 );

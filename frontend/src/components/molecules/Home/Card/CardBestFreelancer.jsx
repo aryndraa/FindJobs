@@ -1,7 +1,6 @@
 import React from "react";
 import { TbCategory } from "react-icons/tb";
-import freelance from "../../assets/home/1.jpg";
-
+import freelance from "../../../../assets/home/1.jpg";
 // Array of freelancer data
 const freelancerData = [
   {

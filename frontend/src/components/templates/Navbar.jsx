@@ -99,8 +99,12 @@ export const SidebarNoAccount = ({ onClose }) => (
             <FiPlus />
           </div>
           <div className="border-b-2 text-gray-400 mt-5"></div>
-          <li className="mt-6">Join Freelancer</li>
-          <li className="mt-6">Manager Account</li>
+          <li className="mt-6">
+            <Link to="join-freelancer">Join Freelancer</Link>
+          </li>
+          <li className="mt-6">
+            <Link to="/manager-account">Manager Account</Link>
+          </li>
         </div>
       </ul>
     </div>
@@ -121,11 +125,13 @@ export const SidebarWithAccount = ({ onClose }) => (
         <BsArrowLeft />
       </button>
       <div className="flex items-center mt-4">
-        <img
-          src="https://i.pinimg.com/564x/12/41/7b/12417b5cfabdeffcb0c55231aca15387.jpg"
-          alt="User Avatar"
-          className="rounded-full w-16 h-fit"
-        />
+        <div className="bg-cover w-16 h-16">
+          <img
+            src="https://i.pinimg.com/564x/12/41/7b/12417b5cfabdeffcb0c55231aca15387.jpg"
+            alt="User Avatar"
+            className="rounded-full h-full w-full object-cover"
+          />
+        </div>
         <div className="ml-4">
           <p className="text-2xl font-semibold">Ayu Aristaa</p>
           <p className="text-sm text-secondary mt-1">example123@gmail.com</p>
@@ -134,21 +140,36 @@ export const SidebarWithAccount = ({ onClose }) => (
       <div className="border-b-2 text-gray-400 mt-5"></div>
       <ul className="mt-6">
         <div className="text-secondary gap-10">
-          <li className="mt-6">Home</li>
-          <li className="mt-6">Find Services</li>
-          <li className="mt-6">Find Projects</li>
+          <li>
+            <Link to="/">Home</Link>
+          </li>
+          <li className="mt-6">
+            <Link to="/service">Find Services</Link>
+          </li>
+          <li className="mt-6">
+            <Link to="/project">Find Projects</Link>
+          </li>
           <div className="flex justify-between items-center mt-6">
             <li>Category</li>
             <FiPlus />
           </div>
           <div className="border-b-2 text-gray-400 mt-5"></div>
-          <li className="mt-6">Profile</li>
+          <li className="mt-6">
+            <Link to="/profile">Profile</Link>
+          </li>
           <div className="flex justify-between items-center mt-6">
-            <li>Message</li>
+            <li>
+              <Link to="/messages"></Link>
+              Messages
+            </li>
             <span className="p-2 rounded-full bg-hijaumuda"></span>
           </div>
-          <li className="mt-6">Notifications</li>
-          <li className="mt-6">Cart</li>
+          <li className="mt-6">
+            <Link to="/notifications">Notifications</Link>
+          </li>
+          <li className="mt-6">
+            <Link to="/cart">Cart</Link>
+          </li>
         </div>
       </ul>
     </div>
@@ -169,11 +190,13 @@ export const SidebarFreelancer = ({ onClose }) => (
         <BsArrowLeft />
       </button>
       <div className="flex items-center mt-4">
-        <img
-          src="https://i.pinimg.com/564x/12/41/7b/12417b5cfabdeffcb0c55231aca15387.jpg"
-          alt="User Avatar"
-          className="rounded-full w-16 h-fit"
-        />
+        <div className="bg-cover w-16 h-16">
+          <img
+            src="https://i.pinimg.com/564x/12/41/7b/12417b5cfabdeffcb0c55231aca15387.jpg"
+            alt="User Avatar"
+            className="rounded-full h-full w-full object-cover"
+          />
+        </div>
         <div className="ml-4">
           <p className="text-2xl font-semibold">Ayu Aristaa</p>
           <span className="inline-block px-2 py-1 text-sm bg-primary mt-2 text-white rounded-full">
@@ -184,20 +207,32 @@ export const SidebarFreelancer = ({ onClose }) => (
       <div className="border-b-2 text-gray-400 mt-5"></div>
       <ul className="mt-6">
         <div className="text-secondary gap-10">
-          <li className="mt-6">Home</li>
-          <li className="mt-6">Find Services</li>
-          <li className="mt-6">Find Projects</li>
+          <li>
+            <Link to="/">Home</Link>
+          </li>
+          <li className="mt-6">
+            <Link to="/service">Find Services</Link>
+          </li>
+          <li className="mt-6">
+            <Link to="/project">Find Projects</Link>
+          </li>
           <div className="flex justify-between items-center mt-6">
             <li>Category</li>
             <FiPlus />
           </div>
           <div className="border-b-2 text-gray-400 mt-5"></div>
-          <li className="mt-6">Profile</li>
+          <li className="mt-6">
+            <Link to="/profile">Profile</Link>
+          </li>
           <div className="flex justify-between items-center mt-6">
-            <li>Message</li>
+            <li>
+              <Link to="/messages">Messages</Link>
+            </li>
             <span className="p-2 rounded-full bg-hijaumuda"></span>
           </div>
-          <li className="mt-6">Notifications</li>
+          <li className="mt-6">
+            <Link to="/notifications">Notifications</Link>
+          </li>
         </div>
       </ul>
     </div>

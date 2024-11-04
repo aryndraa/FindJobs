@@ -1,6 +1,5 @@
 import React from "react";
 import CategoryDropdown from "../components/molecules/CategoryDropdown";
-import CurrencyDropdown from "../components/molecules/CurrencyDropdown";
 import MinMaxPrice from "../components/molecules/MinMaxPrice";
 
 const CreateProject = () => {

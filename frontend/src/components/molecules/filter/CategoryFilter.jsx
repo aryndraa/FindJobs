@@ -34,9 +34,9 @@ const CategoryFilter = () => {
 
   const handleSearch = () => {
     if (location.pathname === "/service") {
-      navigate("/service-category", { state: { selectedCategories } });
+      navigate("/service/service-category", { state: { selectedCategories } });
     } else if (location.pathname === "/project") {
-      navigate("/project-category", { state: { selectedCategories } });
+      navigate("/project/project-category", { state: { selectedCategories } });
     }
   };
 

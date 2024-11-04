@@ -1,6 +1,6 @@
 import React from 'react'
-import CardRecomendedJobs from '../molecules/CardRecomendedJobs'
-import CardCategory from '../molecules/CardCategory'
+import CardCategory from "../../components/molecules/Home/Card/CardCategory"
+import CardRecomendedJobs from "../../components/molecules/Home/Card/CardRecomendedJobs"
 const CategoryDekstop = () => {
   return (
     <div>

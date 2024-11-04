@@ -1,7 +1,7 @@
 import React from "react";
-import HeroDetailsService from "../components/molecules/HeroDetailsService";
+import HeroDetailsService from "../components/molecules/Detail Service/Hero/HeroDetailsService";
 import SectionAboutService from "../components/organisms/SectionAboutService";
-import CardAboutService from "../components/molecules/CardAboutService";
+import CardAboutService from "../components/molecules/Detail Service/Card/CardAboutService";
 
 const DetailsService = () => {
   return (
@@ -10,8 +10,8 @@ const DetailsService = () => {
       <SectionAboutService />
       <div className="mt-6">
       <h1 className="text-2xl font-semibold">You May Also Like</h1>
-      <p className="text-secondary text-[15px] mt-1">
-        Let's find out more project!
+              <p className="text-secondary text-[15px] mt-1">
+Let's find out more project!
       </p>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3 mt-4">
         <CardAboutService />

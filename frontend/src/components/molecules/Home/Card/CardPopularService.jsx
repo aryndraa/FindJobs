@@ -1,8 +1,8 @@
 import React from "react";
-import service from "../../assets/home/Card Popular/editor.gif";
-import analyst from "../../assets/home/Card Popular/analyst.gif";
-import webdev from "../../assets/home/Card Popular/webdev.gif";
-import ai from "../../assets/home/Card Popular/machine-learning.gif";
+import service from "../../../../assets/home/Card Popular/editor.gif";
+import analyst from "../../../../assets/home/Card Popular/analyst.gif";
+import webdev from "../../../../assets/home/Card Popular/webdev.gif";
+import ai from "../../../../assets/home/Card Popular/machine-learning.gif";
 import { GoProject } from "react-icons/go";
 import { MdOutlineFavoriteBorder } from "react-icons/md";
 import { MdOutlineHomeRepairService } from "react-icons/md";

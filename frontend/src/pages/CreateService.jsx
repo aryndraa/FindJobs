@@ -1,8 +1,7 @@
 import React from "react";
 import CategoryDropdown from "../components/molecules/CategoryDropdown";
-import CurrencyDropdown from "../components/molecules/CurrencyDropdown";
 import MinMaxPrice from "../components/molecules/MinMaxPrice";
-import SelectImage from "../components/molecules/SelectImage"
+import SelectImage from "../components/molecules/SelectImage";
 
 const CreateService = () => {
   return (
@@ -12,9 +11,10 @@ const CreateService = () => {
         <h1 className="text-3xl font-semibold">Create Service</h1>
         {/* Input Image */}
         <div className="mt-10">
-          <SelectImage/>
+          <SelectImage />
         </div>
         {/* Input title */}
+        <h1 className="text-3xl font-semibold">Upload Image</h1>
         <div className="mt-10">
           <h1 className="text-lg font-semibold">Title</h1>
           <div className="border border-secondary w-full p-3 rounded-md mt-2">

@@ -1,5 +1,5 @@
 import React from "react";
-import freelance from "../../assets/home/1.jpg";
+import freelance from "../../../../assets/home/1.jpg";
 
 const testimonials = [
   {

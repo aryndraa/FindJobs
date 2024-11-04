@@ -80,7 +80,7 @@ const ProjectCard = ({
           <h4 className="text-sm font-medium">Start From</h4>
           <h2 className="text-lg font-bold text-primary">{price}</h2>
         </div>
-        <Link to="/details-project">
+        <Link to="/project/details-project">
         <button className="bg-primary text-white px-4 py-2 rounded-md hover:bg-green-800 transition">
           Visit Project
         </button>

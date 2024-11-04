@@ -4,11 +4,11 @@ import { Link } from "react-router-dom";
 const BreadCrumbs = ({ breadLink }) => {
   return (
     <div>
-      <qdiv className="breadcrumbs">
+      <qdiv className="breadcrumbs text-secondary">
         <ul>
           {breadLink.map((link, index) => {
             return (
-              <li key={index} className="text-secondary font-medium mb-3 mx-3">
+              <li key={index} className="font-medium mb-3">
                 <Link to={link.url}>{link.name}</Link>
               </li>
             );

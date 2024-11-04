@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { FaImage } from "react-icons/fa";
+import { LuImagePlus } from "react-icons/lu";
 
 const SelectImage = () => {
   const [file, setFile] = useState(null);
@@ -10,11 +10,10 @@ const SelectImage = () => {
   };
 
   return (
-    <div className="mt-10">
-      <h1 className="text-lg font-semibold">Image</h1>
+    <div>
       <div className="border border-gray-300 w-full h-40 rounded-md mt-2 flex items-center justify-center bg-gray-100 cursor-pointer">
-        <label className="flex flex-col items-center">
-          <FaImage className="text-gray-400 text-4xl mb-2" />
+        <label className="flex flex-col items-center cursor-pointer">
+          <LuImagePlus className="text-gray-400 text-5xl mb-2" />
           <span className="text-gray-400">
             {file ? file : "Choose an image"}
           </span>

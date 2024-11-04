@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import logo from "../../assets/logo.svg";
 import { RiInstagramFill } from "react-icons/ri";
 import { FaFacebook, FaXTwitter } from "react-icons/fa6";
+import { Link } from "react-router-dom";
 // Footer for No Account
 export const FooterNoAccount = () => {
   return (
@@ -10,7 +11,7 @@ export const FooterNoAccount = () => {
         {/* Logo and Social Links */}
         <div>
           <div className="flex items-center gap-3 mb-4">
-          <img src={logo} alt="FindJobs" className="w-32 -mr-10" />
+            <img src={logo} alt="FindJobs" className="w-32 -mr-10" />
             <h1 className="text-2xl font-bold text-white">FindJobs.</h1>
           </div>
           <div className="flex gap-8 justify-center items-center -mt-8">
@@ -29,18 +30,48 @@ export const FooterNoAccount = () => {
         <div>
           <h6 className="text-white mb-3 text-xl font-semibold">Explore</h6>
           <ul className="space-y-2">
-            <li><a href="#" className="text-gray-400 hover:text-white">Find Projects</a></li>
-            <li><a href="#" className="text-gray-400 hover:text-white">Find Services</a></li>
-            <li><a href="#" className="text-gray-400 hover:text-white">Find Freelancers</a></li>
+            <li>
+              <Link to="/project" className="text-gray-400 hover:text-white">
+                Find Projects
+              </Link>
+            </li>
+            <li>
+              <Link to="/service" className="text-gray-400 hover:text-white">
+                Find Services
+              </Link>
+            </li>
+            <li>
+              <Link
+                to="/find-freelancers"
+                className="text-gray-400 hover:text-white"
+              >
+                Find Freelancers
+              </Link>
+            </li>
           </ul>
         </div>
         {/* Join Us Section */}
         <div>
           <h6 className="text-white text-xl font-semibold mb-3">Join Us</h6>
           <ul className="space-y-2">
-            <li><a href="#" className="text-gray-400 hover:text-white">Register</a></li>
-            <li><a href="#" className="text-gray-400 hover:text-white">Login</a></li>
-            <li><a href="#" className="text-gray-400 hover:text-white">Join Freelancer</a></li>
+            <li>
+              <Link to="/register" className="text-gray-400 hover:text-white">
+                Register
+              </Link>
+            </li>
+            <li>
+              <Link to="/login" className="text-gray-400 hover:text-white">
+                Login
+              </Link>
+            </li>
+            <li>
+              <Link
+                to="/join-freelancer"
+                className="text-gray-400 hover:text-white"
+              >
+                Join Freelancer
+              </Link>
+            </li>
           </ul>
         </div>
         {/* Stats */}
@@ -52,7 +83,9 @@ export const FooterNoAccount = () => {
         </div>
       </div>
       <div className="border-t border-gray-600 text-center py-4 mt-8">
-        <p className="text-gray-400">© 2024 FindJobs. By Rahayu Team's Project</p>
+        <p className="text-gray-400">
+          © 2024 FindJobs. By Rahayu Team's Project
+        </p>
       </div>
     </footer>
   );
@@ -66,7 +99,7 @@ export const FooterWithAccount = () => {
         {/* Logo and Social Links */}
         <div>
           <div className="flex items-center justify-end gap-3 mb-4">
-          <img src={logo} alt="FindJobs" className="w-32 -mr-10" />
+            <img src={logo} alt="FindJobs" className="w-32 -mr-10" />
             <h1 className="text-2xl font-bold text-white">FindJobs.</h1>
           </div>
           <div className="flex gap-8 justify-center items-center -mt-8">
@@ -85,18 +118,45 @@ export const FooterWithAccount = () => {
         <div>
           <h6 className="text-white text-xl font-semibold mb-3">Explore</h6>
           <ul className="space-y-2">
-            <li><a href="#" className="text-gray-400 hover:text-white">Find Projects</a></li>
-            <li><a href="#" className="text-gray-400 hover:text-white">Find Services</a></li>
-            <li><a href="#" className="text-gray-400 hover:text-white">Find Freelancers</a></li>
+            <li>
+              <Link to="/project" className="text-gray-400 hover:text-white">
+                Find Projects
+              </Link>
+            </li>
+            <li>
+              <Link to="/service" className="text-gray-400 hover:text-white">
+                Find Services
+              </Link>
+            </li>
+            <li>
+              <Link
+                to="/find-freelancers"
+                className="text-gray-400 hover:text-white"
+              >
+                Find Freelancers
+              </Link>
+            </li>
           </ul>
         </div>
         {/* Account Section */}
         <div>
           <h6 className="text-white text-xl font-semibold mb-3">Account</h6>
           <ul className="space-y-2">
-            <li><a href="#" className="text-gray-400 hover:text-white">Profile</a></li>
-            <li><a href="#" className="text-gray-400 hover:text-white">My Project</a></li>
-            <li><a href="#" className="text-gray-400 hover:text-white">Messages</a></li>
+            <li>
+              <Link to="/profile" className="text-gray-400 hover:text-white">
+                Profile
+              </Link>
+            </li>
+            <li>
+              <Link to="/my-project" className="text-gray-400 hover:text-white">
+                My Project
+              </Link>
+            </li>
+            <li>
+              <Link to="/messages" className="text-gray-400 hover:text-white">
+                Messages
+              </Link>
+            </li>
           </ul>
         </div>
         {/* Stats */}
@@ -108,7 +168,9 @@ export const FooterWithAccount = () => {
         </div>
       </div>
       <div className="border-t border-gray-600 text-center py-4 mt-8">
-        <p className="text-gray-400">© 2024 FindJobs. By Rahayu Team's Project</p>
+        <p className="text-gray-400">
+          © 2024 FindJobs. By Rahayu Team's Project
+        </p>
       </div>
     </footer>
   );
@@ -122,7 +184,7 @@ export const FooterFreelancer = () => {
         {/* Logo and Social Links */}
         <div>
           <div className="flex items-center gap-3 mb-4">
-          <img src={logo} alt="FindJobs" className="w-32 -mr-10" />
+            <img src={logo} alt="FindJobs" className="w-32 -mr-10" />
             <h1 className="text-2xl font-bold text-white">FindJobs.</h1>
           </div>
           <div className="flex gap-8 justify-center items-center -mt-8">
@@ -141,19 +203,53 @@ export const FooterFreelancer = () => {
         <div>
           <h6 className="text-white text-xl font-semibold mb-3">Explore</h6>
           <ul className="space-y-2">
-            <li><a href="#" className="text-gray-400 hover:text-white">Find Projects</a></li>
-            <li><a href="#" className="text-gray-400 hover:text-white">Find Services</a></li>
-            <li><a href="#" className="text-gray-400 hover:text-white">Find Freelancers</a></li>
+            <li>
+              <Link to="/project" className="text-gray-400 hover:text-white">
+                Find Projects
+              </Link>
+            </li>
+            <li>
+              <Link to="/service" className="text-gray-400 hover:text-white">
+                Find Services
+              </Link>
+            </li>
+            <li>
+              <Link
+                to="/find-freelancers"
+                className="text-gray-400 hover:text-white"
+              >
+                Find Freelancers
+              </Link>
+            </li>
           </ul>
         </div>
         {/* Account Section */}
         <div>
           <h6 className="text-white text-xl font-semibold mb-3">Account</h6>
           <ul className="space-y-2">
-            <li><a href="#" className="text-gray-400 hover:text-white">Profile</a></li>
-            <li><a href="#" className="text-gray-400 hover:text-white">My Project</a></li>
-            <li><a href="#" className="text-gray-400 hover:text-white">My Services</a></li>
-            <li><a href="#" className="text-gray-400 hover:text-white">Messages</a></li>
+            <li>
+              <Link to="/profile" className="text-gray-400 hover:text-white">
+                Profile
+              </Link>
+            </li>
+            <li>
+              <Link to="/my-project" className="text-gray-400 hover:text-white">
+                My Project
+              </Link>
+            </li>
+            <li>
+              <Link
+                to="/my-services"
+                className="text-gray-400 hover:text-white"
+              >
+                My Services
+              </Link>
+            </li>
+            <li>
+              <Link to="/messages" className="text-gray-400 hover:text-white">
+                Messages
+              </Link>
+            </li>
           </ul>
         </div>
         {/* Stats */}
@@ -165,7 +261,9 @@ export const FooterFreelancer = () => {
         </div>
       </div>
       <div className="border-t border-gray-600 text-center py-4 mt-8">
-        <p className="text-gray-400">© 2024 FindJobs. By Rahayu Team's Project</p>
+        <p className="text-gray-400">
+          © 2024 FindJobs. By Rahayu Team's Project
+        </p>
       </div>
     </footer>
   );
@@ -178,10 +276,10 @@ const Footer = () => {
     switch (footer) {
       case "withAccount":
         return <FooterWithAccount />;
-        case "freelancer":
-          return <FooterFreelancer />;
-          default:
-            return <FooterNoAccount />;
+      case "freelancer":
+        return <FooterFreelancer />;
+      default:
+        return <FooterNoAccount />;
     }
   };
 

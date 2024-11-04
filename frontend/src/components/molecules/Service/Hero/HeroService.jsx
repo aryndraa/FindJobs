@@ -1,11 +1,10 @@
-// HeroSection.js
 import React from 'react';
-import bg from "../../assets/service/hero.svg"
-const HeroSection = () => {
+import bg from "../../../../assets/service/hero.svg"
+const HeroService = () => {
   return (
     <div className="bg-gradient-to-r from-[#D0F9D0] to-[#a1f896] w-full rounded-lg flex items-center flex-col lg:flex-row">
         <img
-        src={bg} // Replace with your image path
+        src={bg}
         alt="Hero"
         className="w-48 lg:w-80 "
       />
@@ -21,4 +20,4 @@ const HeroSection = () => {
   );
 };
 
-export default HeroSection;
+export default HeroService;

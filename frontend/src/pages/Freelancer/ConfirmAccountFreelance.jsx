@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { MdPassword } from "react-icons/md";
 import { Link, useLocation } from "react-router-dom";
 
-const ConfirmAccount = () => {
+const ConfirmAccountFreelance = () => {
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
 
@@ -66,7 +66,7 @@ const ConfirmAccount = () => {
           </div>
         </div>
 
-        <Link to="/sign-in">
+        <Link to="/freelance-create-profile">
         <button
           type="submit"
           className="w-full bg-primary text-white py-2 font-medium text-[15px] rounded-lg hover:bg-green-600 transition duration-200"
@@ -79,4 +79,4 @@ const ConfirmAccount = () => {
   );
 };
 
-export default ConfirmAccount;
+export default ConfirmAccountFreelance;

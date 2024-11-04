@@ -1,7 +1,7 @@
-import React from 'react';
-import { useLocation } from 'react-router-dom';
-import ServiceCard from '../components/molecules/ServiceCard';
-import ProjectCardList from '../components/molecules/ProjectCardList';
+import React from "react";
+import { useLocation } from "react-router-dom";
+import ServiceCard from "../components/molecules/Service/Card/ServiceCard";
+import ProjectCardList from "../components/molecules/Project/Card/ProjectCardList";
 
 const CategoryResults = () => {
   const location = useLocation();
@@ -26,9 +26,9 @@ const CategoryResults = () => {
         <h3 className="text-2xl font-medium mt-6 mb-4">12,000 Results</h3>
 
         {/* Conditional Rendering Based on URL Path */}
-        {pathname === '/service-category' ? (
+        {pathname === "/service/service-category" ? (
           <ServiceCard />
-        ) : pathname === '/project-category' ? (
+        ) : pathname === "project/project-category" ? (
           <ProjectCardList />
         ) : null}
       </div>

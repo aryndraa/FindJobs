@@ -1,5 +1,5 @@
 import React from "react";
-import bg from "../../assets/project/hero.svg";
+import bg from "../../../../assets/project/hero.svg";
 const HeroProject = () => {
   return (
     <div>

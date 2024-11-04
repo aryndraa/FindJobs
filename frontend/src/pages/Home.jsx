@@ -9,14 +9,12 @@ import vectorungu from "../assets/home/elements/zigzag-ungu.svg";
 import vectorbiru from "../assets/home/elements/zigzag-biru.svg";
 import centang from "../assets/home/elements/centang-hijau.svg";
 import cta from "../assets/home/cta.svg";
-import CardSwiper from "../components/molecules/CardSwiper";
-import CardRecomendedJobs from "../components/molecules/CardRecomendedJobs";
-import CardBestFreelancer from "../components/molecules/CardBestFreelancer";
-import CardPopularService from "../components/molecules/CardPopularService";
-import CardTestimony from "../components/molecules/CardTestimony";
-import AskQuestions from "../components/molecules/AskQuestions";
-import CardCta from "../components/molecules/CardCta";
-import CardCategory from "../components/molecules/CardCategory";
+import CardSwiper from "../components/molecules/Home/Card/CardSwiper";
+import CardBestFreelancer from "../components/molecules/Home/Card/CardBestFreelancer";
+import CardPopularService from "../components/molecules/Home/Card/CardPopularService";
+import CardTestimony from "../components/molecules/Home/Card/CardTestimony";
+import AskQuestions from "../components/molecules/Home/CTA/AskQuestions";
+import CardCta from "../components/molecules/Home/Card/CardCta";
 import CategoryDekstop from "../components/organisms/CategoryDekstop";
 
 const Home = () => {
