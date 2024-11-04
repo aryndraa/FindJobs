@@ -101,7 +101,7 @@ class ProfileManagementController extends Controller
             }
         }
 
-        $freelancer->load(['freelancerProfile', 'freelancerProfile.avatar', "freelancerProfile.backCover", "freelancerProfile.freelancerSkills"]);
+        $freelancer->load(['profile', 'profile.avatar', "profile.backCover", "profile.freelancerSkills"]);
 
         return new IndexProfileResource($freelancer );
     }

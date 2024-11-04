@@ -26,19 +26,19 @@ Route::prefix('v1/user/')
                 Route::get('/all', 'all')->name("all");
             });
 
-        Route::controller(FreelancerManagementController::class)
-            ->prefix('freelancer-management')
-            ->name('freelancer-management.')
-            ->group(function () {
-                Route::get('/', 'index')->name("index");
-                Route::get('/{freelancer}', 'show')->name("show");
-            });
-
         Route::controller(ServiceManagementController::class)
             ->prefix('service-management')
             ->name('service-management.')
             ->group(function () {
                 Route::get('/', 'index')->name("index");
                 Route::get('/{service}', 'show')->name("show");
+            });
+
+        Route::controller(FreelancerManagementController::class)
+            ->prefix('freelancer-management')
+            ->name('freelancer-management.')
+            ->group(function () {
+                Route::get('/', 'index')->name("index");
+                Route::get('/{freelancer}', 'show')->name("show");
             });
     });

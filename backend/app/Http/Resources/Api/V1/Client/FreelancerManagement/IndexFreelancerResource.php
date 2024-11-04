@@ -1,11 +1,11 @@
 <?php
 
-namespace App\Http\Resources\Api\V1\User\FreelancerManagement;
+namespace App\Http\Resources\Api\V1\Client\FreelancerManagement;
 
 use Illuminate\Http\Request;
 use Illuminate\Http\Resources\Json\JsonResource;
 
-class IndexFreelancerResoource extends JsonResource
+class IndexFreelancerResource extends JsonResource
 {
     /**
      * Transform the resource into an array.
@@ -23,8 +23,8 @@ class IndexFreelancerResoource extends JsonResource
                 "file_path" => $this->profile->avatar->file_path ?? null,
                 "file_type" => $this->profile->avatar->file_type ?? null,
             ],
-            "total_project" => $this->total_projects,
-            "total_likes" => $this->total_likes,
+            "total_project"   => $this->total_projects,
+            "total_likes"     => $this->total_likes,
             "total_favorites" => $this->total_favorites
         ];
     }

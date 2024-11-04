@@ -2,6 +2,7 @@
 
 
 use App\Http\Controllers\Api\V1\Client\Authentication\AuthenticationController;
+use App\Http\Controllers\Api\V1\Client\FreelancerManagement\FreelancerManagementController;
 use App\Http\Controllers\Api\V1\Client\ProfileManagement\ProfileManagementController;
 use App\Http\Controllers\Api\V1\Client\ProjectManagement\ProjectManagementController;
 use App\Http\Controllers\Api\V1\Client\ServiceManagement\ServiceManagementController;
@@ -52,6 +53,15 @@ Route::prefix('v1/client/')
                         Route::get('/', 'index')->name("index");
                         Route::get('/{service}', 'show')->name("show");
                         Route::get('/like/{service}', 'like')->name("like");
+                    });
+
+                Route::controller(FreelancerManagementController::class)
+                    ->prefix('freelancer-management')
+                    ->name('freelancer-management.')
+                    ->group(function () {
+                        Route::get('/', 'index')->name("index");
+                        Route::get('/{freelancer}', 'show')->name("show");
+                        Route::get('/star/{freelancer}', 'star')->name("star");
                     });
             });
     });

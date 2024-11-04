@@ -3,7 +3,7 @@
 namespace App\Http\Controllers\Api\V1\User\FreelancerManagement;
 
 use App\Http\Controllers\Controller;
-use App\Http\Resources\Api\V1\User\FreelancerManagement\IndexFreelancerResoource;
+use App\Http\Resources\Api\V1\User\FreelancerManagement\IndexFreelancerResource;
 use App\Http\Resources\Api\V1\User\FreelancerManagement\ShowFreelancerResource;
 use App\Models\Freelancer;
 use Illuminate\Http\Request;
@@ -27,7 +27,7 @@ class FreelancerManagementController extends Controller
             $freelancer->total_favorites = $freelancer->freelancerStar->count();
         }
 
-        return IndexFreelancerResoource::collection($freelancers);
+        return IndexFreelancerResource::collection($freelancers);
     }
 
     public function show(Freelancer $freelancer)

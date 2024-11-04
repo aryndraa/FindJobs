@@ -13,6 +13,7 @@ use App\Models\Freelancer;
 use App\Models\Project;
 use App\Models\ProjectBidder;
 use App\Models\ProjectCategory;
+use App\Models\ProjectHistory;
 use Illuminate\Http\Request;
 
 class ProjectManagementController extends Controller
@@ -144,6 +145,45 @@ class ProjectManagementController extends Controller
         ]);
     }
 
+    public function listBidders(Project $project)
+    {
+        $user = auth()->user();
+        $bidderProjects = ProjectBidder::query()
+            ->where('project_id', $project->id)
+            ->get();
+
+        return $bidderProjects;
+    }
+
+    public function acceptBid(Project $project, Freelancer $freelancer)
+    {
+        $user = auth()->user();
+        $existingBid = ProjectHistory::query()
+            ->where('client_id', $user->id)
+            ->where('project_id', $project->id)
+            ->where('freelancer_id', $freelancer->id)
+            ->first();
+
+        if ($existingBid) {
+            $existingBid->delete();
+
+            return response()->json([
+                "message" => "Bid Removed",
+            ]);
+        }
+
+        $acceptBid = new ProjectHistory();
+
+        $acceptBid->client()->associate($user);
+        $acceptBid->freelancer()->associate($freelancer->id);
+        $acceptBid->project()->associate($project->id);
+        $acceptBid->save();
+
+        return response()->json([
+            "message" => "Bid Accepted",
+        ]);
+    }
+
     public function bidProject(Project $project)
     {
         $projectBidder =  new ProjectBidder();
@@ -156,5 +196,4 @@ class ProjectManagementController extends Controller
             "message" => "Project Bidder",
         ]);
     }
-
 }
