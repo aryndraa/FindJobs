@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Api\V1\Freelancer\Authentication\AuthenticationController;
+use App\Http\Controllers\Api\V1\Freelancer\FreelancerManagement\FreelancerManagementController;
 use App\Http\Controllers\Api\V1\Freelancer\ProfileManagement\ProfileManagementController;
 use App\Http\Controllers\Api\V1\Freelancer\ProjectManagement\ProjectManagementController;
 use App\Http\Controllers\Api\V1\Freelancer\ServiceManagement\ServiceManagementController;
@@ -54,6 +55,15 @@ Route::prefix('v1/freelancer/')
                         Route::post('', 'store')->name("store");
                         Route::post('update/{service}', 'update')->name("update");
                         Route::post('delete/{service}', 'destroy')->name("destroy");
+                    });
+
+                Route::controller(FreelancerManagementController::class)
+                    ->prefix('freelancer-management')
+                    ->name('freelancer-management.')
+                    ->group(function () {
+                        Route::get('/', 'index')->name("index");
+                        Route::get('/{freelancer}', 'show')->name("show");
+                        Route::get('/star/{freelancer}', 'star')->name("star");
                     });
             });
     });
