@@ -2,6 +2,7 @@ import React from "react";
 import { useLocation } from "react-router-dom";
 import ServiceCard from "../components/molecules/Service/Card/ServiceCard";
 import ProjectCardList from "../components/molecules/Project/Card/ProjectCardList";
+import CardListFreelancer from "../components/molecules/List Freelancer/Card/CardListFreelancer";
 
 const CategoryResults = () => {
   const location = useLocation();
@@ -24,12 +25,14 @@ const CategoryResults = () => {
         </div>
 
         <h3 className="text-2xl font-medium mt-6 mb-4">12,000 Results</h3>
-
-        {/* Conditional Rendering Based on URL Path */}
         {pathname === "/service/service-category" ? (
           <ServiceCard />
-        ) : pathname === "project/project-category" ? (
+        ) 
+        : pathname === "/project/project-category" ? (
           <ProjectCardList />
+        ) 
+        : pathname === "/list-freelancer/freelancer-category" ? (
+          <CardListFreelancer/>
         ) : null}
       </div>
     </div>

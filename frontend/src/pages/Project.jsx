@@ -9,10 +9,13 @@ const Project = () => {
     <div className="mx-7 lg:mx-16 py-24">
       <HeroProject />
       <CategoryFilter />
-      <div className="flex justify-between items-center flex-col lg:flex-row">
+      <div className="flex items-start flex-col lg:flex-row justify-between gap-5">
         <SearchBar />
-        <SortingOptions />
+        <div className="mt-2 flex items-end">
+          <SortingOptions />
+        </div>
       </div>
+      <h2 className="text-xl font-bold mt-6">12,000 Results</h2>
       <ProjectCard />
     </div>
   );

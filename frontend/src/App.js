@@ -19,6 +19,8 @@ import FreelanceRegister from "./pages/Freelancer/FreelanceRegister";
 import FreelanceLogin from "./pages/Freelancer/FreelanceLogin";
 import CreateProfileFreelancer from "./pages/Freelancer/CreateProfileFreelancer";
 import ConfirmAccountFreelance from "./pages/Freelancer/ConfirmAccountFreelance";
+import ListFreelancer from "./pages/ListFreelancer";
+import CardListFreelancer from "./components/molecules/List Freelancer/Card/CardListFreelancer";
 function App() {
   return (
     <Router>
@@ -31,9 +33,15 @@ function App() {
         <Route path="/sign-in" element={<SignIn />} />
         <Route path="/sign-up/confirm-account" element={<ConfirmAccount />} />
         <Route path="/freelance-register" element={<FreelanceRegister />} />
-        <Route path="/register/confirm-account-freelance" element={<ConfirmAccountFreelance/>} />
+        <Route
+          path="/register/confirm-account-freelance"
+          element={<ConfirmAccountFreelance />}
+        />
         <Route path="/freelance-login" element={<FreelanceLogin />} />
-        <Route path="/freelance-create-profile" element={<CreateProfileFreelancer />} />
+        <Route
+          path="/freelance-create-profile"
+          element={<CreateProfileFreelancer />}
+        />
         <Route path="/project" element={<Project />} />
         <Route path="/project/project-category" element={<CategoryResults />} />
         <Route path="/project/create-project" element={<CreateProject />} />
@@ -42,6 +50,8 @@ function App() {
         <Route path="/service/details-service" element={<DetailsService />} />
         <Route path="/service/service-category" element={<CategoryResults />} />
         <Route path="/service/create-service" element={<CreateService />} />
+        <Route path="/list-freelancer" element={<ListFreelancer />} />
+        <Route path="/list-freelancer/freelancer-category" element={<CategoryResults />} />
       </Routes>
       <Footer />
     </Router>
