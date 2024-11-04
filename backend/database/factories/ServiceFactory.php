@@ -22,6 +22,8 @@ class ServiceFactory extends Factory
             'name'          => fake()->name(),
             'description'   => $this->faker->text(),
             'price'         => fake()->numberBetween(1000, 999999),
+            'currency'      => fake()->randomElement(['USD', 'EUR', 'JPY', 'IDR']),
+
         ];
     }
 }

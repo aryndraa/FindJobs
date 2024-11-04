@@ -3,6 +3,7 @@
 use App\Http\Controllers\Api\V1\Freelancer\Authentication\AuthenticationController;
 use App\Http\Controllers\Api\V1\Freelancer\ProfileManagement\ProfileManagementController;
 use App\Http\Controllers\Api\V1\Freelancer\ProjectManagement\ProjectManagementController;
+use App\Http\Controllers\Api\V1\Freelancer\ServiceManagement\ServiceManagementController;
 use Illuminate\Support\Facades\Route;
 
 Route::prefix('v1/freelancer/')
@@ -40,6 +41,19 @@ Route::prefix('v1/freelancer/')
                         Route::post('complete/{project}', 'isComplete')->name('isComplete');
                         Route::post('bid-status/{project}', 'bidStatus')->name('bidStatus');
                         Route::post('bid/{project}', 'bidProject')->name('bidProject');
+                    });
+
+                Route::controller(ServiceManagementController::class)
+                    ->prefix('service-management')
+                    ->name('service-management.')
+                    ->group(function () {
+                        Route::get('/', 'index')->name("index");
+                        Route::get('/my-services', 'myService')->name("myService");
+                        Route::get('/{service}', 'show')->name("show");
+                        Route::get('/favorite/{service}', 'favorite')->name("favorite");
+                        Route::post('', 'store')->name("store");
+                        Route::post('update/{service}', 'update')->name("update");
+                        Route::post('delete/{service}', 'destroy')->name("destroy");
                     });
             });
     });

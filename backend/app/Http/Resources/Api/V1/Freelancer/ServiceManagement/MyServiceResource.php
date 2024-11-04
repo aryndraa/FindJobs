@@ -1,12 +1,12 @@
 <?php
 
-namespace App\Http\Resources\Api\V1\User\ServiceManagement;
+namespace App\Http\Resources\Api\V1\Freelancer\ServiceManagement;
 
 use Illuminate\Http\Request;
 use Illuminate\Http\Resources\Json\JsonResource;
 use Illuminate\Support\Str;
 
-class IndexServiceResource extends JsonResource
+class MyServiceResource extends JsonResource
 {
     /**
      * Transform the resource into an array.
@@ -21,15 +21,6 @@ class IndexServiceResource extends JsonResource
             "description" => Str::limit($this->description, 50),
             "price"       => $this->price,
             "created_at"  => $this->created_at,
-            "freelancer"  => [
-                "id"     => $this->freelancer->id,
-                "name"   => $this->freelancer->name,
-                "avatar" => [
-                    "file_path" => $this->freelancer->profile->avatar->file_path ?? null,
-                    "file_name" => $this->freelancer->profile->avatar->file_name ?? null,
-                    "file_type" => $this->freelancer->profile->avatar->file_type ?? null,
-                ]
-            ],
             "service_categories" => $this->serviceCategories->map(function ($serviceCategory) {
                 return [
                     "id"   => $serviceCategory->category->id ?? null,

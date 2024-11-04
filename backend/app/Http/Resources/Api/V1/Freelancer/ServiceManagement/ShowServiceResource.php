@@ -1,12 +1,12 @@
 <?php
 
-namespace App\Http\Resources\Api\V1\User\ServiceManagement;
+namespace App\Http\Resources\Api\V1\Freelancer\ServiceManagement;
 
 use Illuminate\Http\Request;
 use Illuminate\Http\Resources\Json\JsonResource;
 use Illuminate\Support\Str;
 
-class IndexServiceResource extends JsonResource
+class ShowServiceResource extends JsonResource
 {
     /**
      * Transform the resource into an array.
@@ -18,7 +18,7 @@ class IndexServiceResource extends JsonResource
         return [
             "id"          => $this->id,
             "name"        => $this->name,
-            "description" => Str::limit($this->description, 50),
+            "description" => $this->description,
             "price"       => $this->price,
             "created_at"  => $this->created_at,
             "freelancer"  => [
@@ -42,7 +42,25 @@ class IndexServiceResource extends JsonResource
                 "file_path" => $this->image->file_path ?? null,
                 "file_name" => $this->image->file_name ?? null,
                 "file_type" => $this->image->file_type ?? null,
-            ]
+            ],
+            "freelancer_other_services" => $this->freelancer->services->map(function ($service) {
+                return [
+                    "id"          => $service->id,
+                    "name"        => $service->name,
+                    "description" => Str::limit($service->description, 50),
+                    "price"       => $service->price,
+                    "created_at"  => $service->created_at,
+                    "service_categories" => $service->serviceCategories->map(function ($serviceCategory) {
+                        return [
+                            "id"   => $serviceCategory->category->id ?? null,
+                            "name" => $serviceCategory->category->name ?? null,
+                        ];
+                    }),
+                    "visitor" => $service->visitor_count,
+                    "like"    => $service->like_count,
+                ];
+            })
+
         ];
     }
 }

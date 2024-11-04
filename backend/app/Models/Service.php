@@ -12,7 +12,8 @@ class Service extends Model
     protected $fillable = [
         'name',
         'description',
-        'price'
+        'price',
+        'currency'
     ];
 
     public function freelancer()
@@ -20,7 +21,7 @@ class Service extends Model
         return $this->belongsTo(Freelancer::class);
     }
 
-    public function  image()
+    public function image()
     {
         return $this->morphOne(File::class, 'related');
     }

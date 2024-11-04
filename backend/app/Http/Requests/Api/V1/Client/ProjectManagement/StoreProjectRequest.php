@@ -26,7 +26,7 @@ class StoreProjectRequest extends FormRequest
             "description"  => ['required', 'string'],
             "price_min"    => ['required', 'integer', 'min:1'],
             "price_max"    => ['required', 'integer', 'gt:price_min'],
-            "currency"     => ['required', 'string', 'in:USD,EUR,JP,RP'],
+            "currency"     => ['required', 'string', 'in:USD,EUR,JP,IDR'],
             "categories"   => ['required', 'array'],
             "categories.*" => ['required', 'exists:categories,id'],
         ];

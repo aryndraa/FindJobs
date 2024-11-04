@@ -37,7 +37,12 @@ class IndexServiceResource extends JsonResource
                 ];
             }),
             "visitor" => $this->visitor_count,
-            "like"    => $this->like_count
+            "like"    => $this->like_count,
+            "image"   => [
+                "file_path" => $this->image->file_path ?? null,
+                "file_name" => $this->image->file_name ?? null,
+                "file_type" => $this->image->file_type ?? null,
+            ]
         ];
     }
 }

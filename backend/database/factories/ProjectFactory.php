@@ -28,7 +28,7 @@ class ProjectFactory extends Factory
             'description'  => fake()->text(),
             'price_min'    => fake()->numberBetween(50000, 500000),
             'price_max'    => fake()->numberBetween(50000, 500000),
-            'currency'     => fake()->randomElement(['USD', 'EUR', 'JPY', 'RP']),
+            'currency'     => fake()->randomElement(['USD', 'EUR', 'JPY', 'IDR']),
             'is_completed' => fake()->boolean(),
             'bid_status'   => fake()->boolean(),
         ];

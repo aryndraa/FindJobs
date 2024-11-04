@@ -1,10 +1,10 @@
 <?php
 
-namespace App\Http\Requests\Api\V1\Freelancer\ProjectManagement;
+namespace App\Http\Requests\Api\V1\Freelancer\ServiceManagement;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class UpdateProjectRequest extends FormRequest
+class UpdateServiceRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -22,13 +22,13 @@ class UpdateProjectRequest extends FormRequest
     public function rules(): array
     {
         return [
-            "title"        => ['string', 'max:255'],
-            "description"  => ['string'],
-            "price_min"    => ['integer', 'min:1'],
-            "price_max"    => ['integer', 'gt:price_min'],
-            "currency"     => ['string', 'in:USD,EUR,JP,IDR'],
-            "categories"   => ['array'],
+            'name'         => ['required', 'string'],
+            'description'  => ['required', 'string', 'max:1000'],
+            'price'        => ['required', 'integer', 'min:1'],
+            "currency"     => ['required', 'string', 'in:USD,EUR,JP,IDR'],
+            "categories"   => ['required', 'array'],
             "categories.*" => ['exists:categories,id'],
+            "image"        => ['required', 'file', 'mimes:jpeg,png,jpg,gif,svg', 'max:2048'],
         ];
     }
 }

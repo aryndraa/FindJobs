@@ -7,6 +7,7 @@ use App\Http\Requests\Api\V1\Freelancer\ProjectManagement\StoreProjectRequest;
 use App\Http\Requests\Api\V1\Freelancer\ProjectManagement\UpdateProjectRequest;
 use App\Http\Resources\Api\V1\Freelancer\ProjectManagement\IndexProjectResource;
 use App\Http\Resources\Api\V1\Freelancer\ProjectManagement\MyProjectResource;
+use App\Models\Category;
 use App\Models\Client;
 use App\Models\Freelancer;
 use App\Models\Project;
@@ -82,13 +83,16 @@ class ProjectManagementController extends Controller
         $project->update($request->validated());
 
         $currentCategoryIds = $project->projectCategories()->pluck('category_id')->toArray();
-        $newCategoryIds     = $request->categories;
+        $newCategoryIds     = $request->input('categories', []);
 
         foreach ($newCategoryIds as $categoryId) {
             if (!in_array($categoryId, $currentCategoryIds)) {
-                $project->projectCategories()->create([
-                    'category_id' => $categoryId,
-                ]);
+                $category = Category::find($categoryId);
+                if ($category) {
+                    $serviceCategory = $project->projectCategories()->make();
+                    $serviceCategory->category()->associate($category);
+                    $serviceCategory->save();
+                }
             }
         }
 
@@ -148,7 +152,9 @@ class ProjectManagementController extends Controller
         $projectBidder->freelancer()->associate(auth()->user());
         $projectBidder->save();
 
-        return $projectBidder;
+        return response()->json([
+            "message" => "Project Bidder",
+        ]);
     }
 
 }

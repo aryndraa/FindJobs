@@ -26,7 +26,7 @@ class UpdateProjectRequest extends FormRequest
             "description"  => ['string'],
             "price_min"    => ['integer', 'min:1'],
             "price_max"    => ['integer', 'gt:price_min'],
-            "currency"     => ['string', 'in:USD,EUR,JP,RP'],
+            "currency"     => ['string', 'in:USD,EUR,JP,IDR'],
             "categories"   => ['array'],
             "categories.*" => ['exists:categories,id'],
         ];
