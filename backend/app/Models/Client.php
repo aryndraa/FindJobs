@@ -43,4 +43,9 @@ class Client extends Authenticatable
         return $this->morphMany(UserChat::class, 'receiver');
     }
 
+    public function notifications()
+    {
+        return $this->morphMany(Notification::class, 'user');
+    }
+
 }

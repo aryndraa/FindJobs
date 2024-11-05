@@ -12,7 +12,7 @@ const FreelanceRegister = () => {
         <h2 className="text-[23px] font-bold mt-2">Sign Up to Your Freelancer Account</h2>
         <p className="text-secondary text-sm mt-2">Create New Your Freelancer Account</p>
         <div className="mb-4 mt-5">
-          <label label className="block text-hitam mb-2">
+          <label className="block text-hitam mb-2">
             Name
           </label>
           <div className="flex items-center border-b border-gray-300 p-2">

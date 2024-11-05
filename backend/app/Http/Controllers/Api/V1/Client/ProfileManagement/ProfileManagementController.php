@@ -18,7 +18,7 @@ class ProfileManagementController extends Controller
         $client = auth()->id();
         $profile = Client::query()
             ->where('id', $client)
-            ->with(['clientProfile', 'clientProfile.avatar', "clientProfile.backCover"])
+            ->with(['profile', 'profile.avatar', "profile.backCover"])
             ->first();
 
         return new IndexProfileResource($profile);

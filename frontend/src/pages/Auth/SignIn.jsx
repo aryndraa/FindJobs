@@ -43,7 +43,7 @@ const SignIn = () => {
           </div>
         </div>
 
-        <Link to="/">
+        <Link to="/frontend/public">
         <button
           type="submit"
           className="w-full bg-primary text-white py-2 rounded-lg hover:bg-green-700 transition duration-200 font-medium" 

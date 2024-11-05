@@ -7,6 +7,7 @@ use App\Http\Requests\Api\V1\Client\Chat\SendingChatRequest;
 use App\Http\Resources\Api\V1\Client\Chat\ChatResource;
 use App\Models\Client;
 use App\Models\Freelancer;
+use App\Models\Notification;
 use App\Models\UserChat;
 
 class ChatController extends Controller
