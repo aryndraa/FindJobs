@@ -2,6 +2,7 @@
 
 
 use App\Http\Controllers\Api\V1\Client\Authentication\AuthenticationController;
+use App\Http\Controllers\Api\V1\Client\Chat\ChatController;
 use App\Http\Controllers\Api\V1\Client\FreelancerManagement\FreelancerManagementController;
 use App\Http\Controllers\Api\V1\Client\ProfileManagement\ProfileManagementController;
 use App\Http\Controllers\Api\V1\Client\ProjectManagement\ProjectManagementController;
@@ -62,6 +63,15 @@ Route::prefix('v1/client/')
                         Route::get('/', 'index')->name("index");
                         Route::get('/{freelancer}', 'show')->name("show");
                         Route::get('/star/{freelancer}', 'star')->name("star");
+                    });
+
+                Route::controller(ChatController::class)
+                    ->prefix('chat')
+                    ->name('chat.')
+                    ->group(function () {
+                        Route::get('/list-chat', 'listChat')->name("listChat");
+                        Route::post('/sending/{sendingType}/{sendingId}', 'sendingMessage')->name("sendingMessage");
+                        Route::get('/receiving/{otherUserId}', 'receiving')->name("receiving");
                     });
             });
     });
