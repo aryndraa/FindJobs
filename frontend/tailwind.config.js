@@ -12,6 +12,7 @@ module.exports = {
         ungumuda: "#E4DFFB",
         ungu: "#8E62E5",
         biru: "#A8DBFF",
+        birumuda: "#D8EFFF",
         hitam: "#222222"
       },
       fontFamily: {

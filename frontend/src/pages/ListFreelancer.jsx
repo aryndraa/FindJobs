@@ -5,9 +5,25 @@ import SearchBar from "../components/molecules/SearchBar";
 import SortingOptions from "../components/molecules/filter/SortingOptions";
 import ProjectCard from "../components/molecules/Project/Card/ProjectCardList";
 import CardListFreelancer from "../components/molecules/List Freelancer/Card/CardListFreelancer";
+import BreadCrumbs from "../components/molecules/BreadCrumbs";
 const ListFreelancer = () => {
+  const breadLink = [
+    {
+      url: "/",
+      name: "home",
+    },
+    {
+      url: "/freelacer",
+      name: "freelancer",
+    },
+    {
+      url: "/freelancer/list",
+      name: "list freelancer",
+    },
+  ];
   return (
     <div className="mx-7 lg:mx-16 py-24">
+      <BreadCrumbs breadLink={breadLink} />
       <HeroListFreelancer />
       <CategoryFilter />
       <div className="flex items-start flex-col lg:flex-row justify-between gap-5">
@@ -18,7 +34,7 @@ const ListFreelancer = () => {
       </div>
       <h2 className="text-xl font-bold mt-6">12,000 Results</h2>
       <div className="mt-4">
-      <CardListFreelancer />
+        <CardListFreelancer />
       </div>
     </div>
   );

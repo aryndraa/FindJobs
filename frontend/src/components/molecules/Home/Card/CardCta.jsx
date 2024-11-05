@@ -12,24 +12,24 @@ const CardCta = () => {
         </div>
         <div className="">
           <h1 className="text-4xl lg:text-5xl font-semibold">
-            1.060<span className="text-primary text-4xl lg:text-5xl font-bold">+</span>
+            1.800<span className="text-primary text-4xl lg:text-5xl font-bold">+</span>
           </h1>
-          <p className="text-lg font-regular text-secondary">clients</p>
+          <p className="text-lg font-regular text-secondary">jobs</p>
         </div>
       </div>
       <div className="mt-5">
       <div className="flex justify-center items-center gap-10 lg:gap-32">
         <div>
           <h1 className="text-4xl lg:text-5xl font-semibold">
-            1.060<span className="text-primary text-4xl lg:text-5xl font-bold">+</span>
+            2.200<span className="text-primary text-4xl lg:text-5xl font-bold">+</span>
           </h1>
-          <p className="text-lg font-regular text-secondary">clients</p>
+          <p className="text-lg font-regular text-secondary">projects</p>
         </div>
         <div className="">
           <h1 className="text-4xl lg:text-5xl font-semibold">
-            1.060<span className="text-primary text-4xl lg:text-5xl font-bold">+</span>
+            1.200<span className="text-primary text-4xl lg:text-5xl font-bold">+</span>
           </h1>
-          <p className="text-lg font-regular text-secondary">clients</p>
+          <p className="text-lg font-regular text-secondary">services</p>
         </div>
       </div>
       </div>

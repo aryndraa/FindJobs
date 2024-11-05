@@ -86,7 +86,7 @@ const CardBestFreelancer = () => {
               </h1>
               <p className="text-sm">Jobs Available</p>
             </div>
-            <button className="px-4 py-1 rounded text-base font-medium border-secondary border hover:bg-primary  transition-all ease-in duration-200 cursor-pointer hover:text-white">
+            <button className="px-4 py-1 rounded text-sm font-medium border-secondary border hover:bg-primary  transition-all ease-in duration-200 cursor-pointer hover:text-white">
               Profile
             </button>
           </div>

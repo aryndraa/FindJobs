@@ -5,11 +5,12 @@ import { MdOutlineFavoriteBorder } from "react-icons/md";
 import { GoPeople } from "react-icons/go";
 import { Link } from "react-router-dom";
 const ServiceCard = () => {
-  // Array of service card data
   const serviceData = [
     {
-      authorImage: "https://img.freepik.com/free-photo/portrait-happy-young-male-student-with-glasses-casual-outfit-posing-park_1153-6309.jpg",
-      serviceImage: "https://img.freepik.com/free-photo/computer-program-coding-screen_53876-138060.jpg",
+      authorImage:
+        "https://img.freepik.com/free-photo/portrait-happy-young-male-student-with-glasses-casual-outfit-posing-park_1153-6309.jpg",
+      serviceImage:
+        "https://img.freepik.com/free-photo/computer-program-coding-screen_53876-138060.jpg",
       title: "Learning Data Analyst in Python",
       author: "Xavier Dreams",
       likes: 1903,
@@ -17,8 +18,10 @@ const ServiceCard = () => {
       price: "120.000",
     },
     {
-      authorImage: "https://img.freepik.com/free-photo/portrait-smiling-confident-businessman_53419-548.jpg",
-      serviceImage: "https://img.freepik.com/free-photo/top-view-wooden-desk-digital-devices-with-office-supplies_23-2147760345.jpg",
+      authorImage:
+        "https://img.freepik.com/free-photo/portrait-smiling-confident-businessman_53419-548.jpg",
+      serviceImage:
+        "https://img.freepik.com/free-photo/top-view-wooden-desk-digital-devices-with-office-supplies_23-2147760345.jpg",
       title: "Master Web Development",
       author: "Lucas Bright",
       likes: 2500,
@@ -26,15 +29,16 @@ const ServiceCard = () => {
       price: "150.000",
     },
     {
-      authorImage: "https://img.freepik.com/free-photo/portrait-smiling-confident-businessman_53419-548.jpg",
-      serviceImage: "https://img.freepik.com/free-photo/top-view-wooden-desk-digital-devices-with-office-supplies_23-2147760345.jpg",
+      authorImage:
+        "https://img.freepik.com/free-photo/portrait-smiling-confident-businessman_53419-548.jpg",
+      serviceImage:
+        "https://img.freepik.com/free-photo/top-view-wooden-desk-digital-devices-with-office-supplies_23-2147760345.jpg",
       title: "Master Web Development",
       author: "Lucas Bright",
       likes: 2500,
       visitors: 35,
       price: "150.000",
     },
-    // Add more service objects as needed
   ];
 
   return (
@@ -49,9 +53,13 @@ const ServiceCard = () => {
                 className="w-full h-full object-cover rounded-full"
               />
             </div>
-            <h1 className="text-sm mr-auto font-semibold font-poppins">
-              {service.author}
-            </h1>
+            <Link to="/service/details-service">
+              <div className="cursor-pointer">
+                <h1 className="text-sm font-semibold font-poppins">
+                  {service.author}
+                </h1>
+              </div>
+            </Link>
             <div className="border border-primary rounded-full p-2 hover:bg-primary transition-all ease-in duration-200 cursor-pointer">
               <MdOutlineFavoriteBorder className="text-primary text-base hover:text-white" />
             </div>
@@ -62,8 +70,8 @@ const ServiceCard = () => {
             className="rounded-lg w-full h-40 object-cover"
           />
           <div className="mt-3">
-            <Link to="/details-service">
-            <h3 className="text-xl font-bold">{service.title}</h3>
+            <Link to="/service/details-service">
+              <h3 className="text-xl font-bold">{service.title}</h3>
             </Link>
             <div className="flex items-center gap-5 mt-3 mb-3 font-poppins">
               <div className="flex gap-2 items-center">
@@ -72,7 +80,9 @@ const ServiceCard = () => {
               </div>
               <div className="flex gap-2 items-center">
                 <AiOutlineTeam className="text-primary text-base" />
-                <p className="text-[13px] font-medium">{service.visitors} Visitors</p>
+                <p className="text-[13px] font-medium">
+                  {service.visitors} Visitors
+                </p>
               </div>
             </div>
             <div className="border-b border-[#e8e8e8]"></div>

@@ -19,7 +19,6 @@ const CategoryFilter = () => {
     "Architecture",
     "Photografer",
     "Videografer",
-    "More",
   ];
 
   const handleCategoryClick = (category) => {

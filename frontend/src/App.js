@@ -21,6 +21,8 @@ import CreateProfileFreelancer from "./pages/Freelancer/CreateProfileFreelancer"
 import ConfirmAccountFreelance from "./pages/Freelancer/ConfirmAccountFreelance";
 import ListFreelancer from "./pages/ListFreelancer";
 import CardListFreelancer from "./components/molecules/List Freelancer/Card/CardListFreelancer";
+import ServiceByCategory from "./pages/ServiceByCategory";
+import ProjectByCategory from "./pages/ProjectByCategory";
 function App() {
   return (
     <Router>
@@ -43,12 +45,12 @@ function App() {
           element={<CreateProfileFreelancer />}
         />
         <Route path="/project" element={<Project />} />
-        <Route path="/project/project-category" element={<CategoryResults />} />
+        <Route path="/project/project-category" element={<ProjectByCategory />} />
         <Route path="/project/create-project" element={<CreateProject />} />
         <Route path="/project/details-project" element={<DetailsProject />} />
         <Route path="/service" element={<Service />} />
         <Route path="/service/details-service" element={<DetailsService />} />
-        <Route path="/service/service-category" element={<CategoryResults />} />
+        <Route path="/service/service-category" element={<ServiceByCategory />} />
         <Route path="/service/create-service" element={<CreateService />} />
         <Route path="/list-freelancer" element={<ListFreelancer />} />
         <Route path="/list-freelancer/freelancer-category" element={<CategoryResults />} />

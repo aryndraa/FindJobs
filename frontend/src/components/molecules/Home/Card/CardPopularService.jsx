@@ -44,7 +44,7 @@ const CardPopularService = () => {
       {cardData.map((card) => (
         <div
           key={card.id}
-          className="border border-[#e8e8e8] rounded w-[21rem] p-3 lg:w-[17rem] lg:p-4"
+          className="border border-[#e8e8e8] rounded w-[21rem] p-3 lg:w-[17rem] xl:w-[26rem] lg:p-4"
         >
           <div className="flex items-center justify-end">
             <div className="bg-[#f5f5f5] rounded-full p-3 hover:bg-primary  transition-all ease-in duration-200 cursor-pointer">

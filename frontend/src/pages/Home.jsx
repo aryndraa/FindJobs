@@ -1,4 +1,5 @@
 import React from "react";
+import {Link} from "react-router-dom"
 import bg from "../assets/home/bg-mobile.svg";
 import freelance1 from "../assets/home/1.jpg";
 import freelance2 from "../assets/home/2.jpg";
@@ -23,51 +24,51 @@ const Home = () => {
       {/* Hero */}
       <div className="flex-col lg:flex-row flex">
         <div>
-          <h1 className="font-bold text-3xl md:text-[40px] lg:text-[45px] leading-tight">
+          <h1 className="font-bold text-3xl md:text-[40px] lg:text-[45px] xl:text-6xl leading-tight">
             Find Your Dream Jobs. With Your Interest and Skills.
           </h1>
-          <p className="text-regular text-secondary mt-2 text-[13px] md:text-[15px] md:max-w-[35rem] lg:max-w-[29rem] leading-relaxed font-poppins">
+          <p className="text-regular text-secondary mt-2 text-[13px] md:text-[15px] md:max-w-[35rem] lg:max-w-[29rem] xl:max-w-[45rem] xl:text-base *:leading-relaxed font-poppins">
             Discover your perfect career match with our innovative job portal.
             We connect talented professionals with opportunities that align with
             their unique skills and passions.
           </p>
           <div className="flex items-center gap-5 mt-5">
             <a
-              href=""
-              className="bg-primary text-white text-sm font-bold py-2 px-6 md:py-3 md:px-10 rounded-md"
+              href="#jobs"
+              className="bg-primary text-white text-sm font-bold py-2 px-6 md:py-3 md:px-10  lg:text-base xl:px-16 rounded-md"
             >
               Find More
             </a>
-            <div className="flex items-center gap-1">
-              <div className="text-2xl font-bold text-primary">10k+</div>
-              <div className="text-secondary text-sm mt-2">Jobs Available</div>
+            <div className="flex items-center gap-1 xl:gap-2">
+              <div className="text-2xl xl:text-3xl font-bold text-primary">10k+</div>
+              <div className="text-secondary text-sm mt-2 xl:text-base">Jobs Available</div>
             </div>
           </div>
-          <div className="mt-5">
-            <h1 className="font-semibold text-base mb-2">1k+ Freelancer</h1>
+          <div className="mt-5 xl:mt-7">
+            <h1 className="font-semibold text-base mb-2 xl:mb-3 xl:text-lg">1k+ Freelancer</h1>
             <div className="flex items-center gap-3">
-              <div className="bg-cover w-10 h-10">
+              <div className="bg-cover w-10 h-10 xl:w-12 xl:h-12">
                 <img
                   src={freelance1}
                   alt=""
                   className="rounded-full w-full h-full object-cover"
                 />
               </div>
-              <div className="bg-cover w-10 h-10">
+              <div className="bg-cover w-10 h-10 xl:w-12 xl:h-12">
                 <img
                   src={freelance2}
                   alt=""
                   className="rounded-full w-full h-full object-cover"
                 />
               </div>
-              <div className="bg-cover w-10 h-10">
+              <div className="bg-cover w-10 h-10 xl:w-12 xl:h-12">
                 <img
                   src={freelance3}
                   alt=""
                   className="rounded-full w-full h-full object-cover"
                 />
               </div>
-              <div className="bg-cover w-10 h-10">
+              <div className="bg-cover w-10 h-10 xl:w-12 xl:h-12">
                 <img
                   src={freelance4}
                   alt=""
@@ -86,11 +87,12 @@ const Home = () => {
         </div>
       </div>
       {/* Recomended Jobs */}
+      <section id="jobs">
       <div className="mt-8">
         <div className="flex justify-between items-center">
           <div>
-            <h1 className="text-3xl lg:text-4xl font-bold">Recomended Jobs</h1>
-            <p className="text-secondary text-sm mt-2 lg:max-w-[23rem]">
+            <h1 className="text-3xl lg:text-4xl xl:text-5xl font-bold">Recomended Jobs</h1>
+            <p className="text-secondary text-sm mt-2 lg:max-w-[23rem] xl:text-base xl:max-w-[27rem]">
               Explore a world of exciting career opportunities tailored to your
               unique skills and interests.
             </p>
@@ -115,11 +117,12 @@ const Home = () => {
           </button>
         </div>
       </div>
+      </section>
       {/* Best Freelancer */}
       <div className="mt-12">
         <div>
-          <h1 className="text-3xl lg:text-4xl font-bold">Best Freelancer</h1>
-          <p className="text-secondary text-sm mt-2 lg:max-w-[20rem]">
+          <h1 className="text-3xl lg:text-4xl xl:text-5xl font-bold">Best Freelancer</h1>
+          <p className="text-secondary text-sm mt-2 lg:max-w-[20rem] xl:text-base xl:max-w-[23rem]">
             Let's discover, our top-tier freelance talent from around the globe.
           </p>
         </div>
@@ -136,10 +139,10 @@ const Home = () => {
             <img src={cta} alt="" className="w-[28rem] lg:w-[35rem]" />
           </div>
           <div>
-            <h1 className="text-3xl lg:text-5xl lg:leading-snug lg:max-w-[34rem] font-bold text-justify">
+            <h1 className="text-3xl lg:text-5xl lg:leading-snug lg:max-w-[34rem] xl:text-5xl xl:leading-normal font-bold text-justify">
               View Freelancer Profile to Avoid Mistakes.
             </h1>
-            <p className="text-secondary text-sm leading-relaxed mt-4 text-justify md:max-w-[37rem]">
+            <p className="text-secondary text-sm leading-relaxed mt-4 text-justify md:max-w-[37rem] xl:text-base">
               Discover world-class freelancers who transform challenges into
               breakthrough solutions. Our curated network brings together the
               most innovative and skilled professionals across industries, ready
@@ -182,19 +185,21 @@ const Home = () => {
         <AskQuestions />
       </div>
       {/* CTA */}
-      <div className="mt-12 mb-7 lg:flex lg:gap-40">
+      <div className="mt-12 xl:mt-20 mb-7 lg:flex lg:gap-40">
         <div>
-          <h1 className="text-3xl lg:text-4xl font-bold lg:max-w-[30rem] lg:text-justify lg:leading-tight">
+          <h1 className="text-3xl lg:text-4xl font-bold lg:max-w-[30rem] lg:text-justify xl:text-5xl xl:leading-snug xl:max-w-[40rem] lg:leading-tight">
             Our Service have a proven track record of boosting business
           </h1>
-          <p className="text-secondary text-sm mt-2 lg:max-w-[30rem]">
+          <p className="text-secondary text-sm mt-2 lg:max-w-[30rem] xl:max-w-[38rem] xl:mt-3 xl:text-base">
             Our services have a demonstrated history of driving significant
             business growth for our clients. Leveraging the expertise of our
             vetted professionals.
           </p>
+          <Link to="/sign-up">
           <button className="text-lg w-full lg:w-64 lg:text-base py-2 border bg-primary rounded-full text-white mt-4 font-medium">
             Let's Get Started
           </button>
+          </Link>
         </div>
         <CardCta />
       </div>

@@ -40,16 +40,16 @@ export const NavbarNoAccount = () => {
           <div className="flex items-center justify-between py-2 gap-8">
             <Logo />
             <SearchBar />
-            <nav className="flex items-center gap-8 text-sm font-semibold">
+            <nav className="flex items-center gap-8 text-sm xl:text-base font-semibold">
               <ul className="flex gap-8">
-                <li>
+                <li className="hover:text-primary transition-all ease-in duration-100">
                   <Link to="/">Home</Link>
                 </li>
                 <DropdownEksplore
                   isDropdownOpen={isDropdownOpen}
                   setIsDropdownOpen={setIsDropdownOpen}
                 />
-                <li>
+                <li className="hover:text-primary transition-all ease-in duration-100">
                   <Link to="/freelance-register">Freelance Register</Link>
                 </li>
               </ul>
@@ -57,12 +57,12 @@ export const NavbarNoAccount = () => {
           </div>
           <div className="flex gap-4">
             <Link to="/sign-up">
-              <button className="border-black text-black border rounded-full text-[13px] py-1 px-6 md:px-4 hover:bg-black hover:text-white transform transition-all ease-in duration-200">
+              <button className="border-black text-black border rounded-full text-[13px] py-1 px-6 md:px-4 xl:px-7 xl:text-base hover:bg-black hover:text-white transform transition-all ease-in duration-200">
                 Sign Up
               </button>
             </Link>
             <Link to="/sign-in">
-              <button className="bg-black text-white rounded-full text-[13px] py-1 px-6 md:px-4">
+              <button className="bg-black text-white rounded-full text-[13px] py-1 px-6 md:px-4 xl:px-7 xl:text-base">
                 Sign In
               </button>
             </Link>
@@ -84,16 +84,16 @@ export const NavbarLoggedIn = () => {
           <div className="flex items-center justify-between py-2 gap-8">
             <Logo />
             <SearchBar />
-            <nav className="flex items-center gap-8 text-sm font-semibold">
+            <nav className="flex items-center gap-8 text-sm xl:text-base font-semibold">
               <ul className="flex gap-8">
-                <li>
+                <li className="hover:text-primary transition-all ease-in duration-100">
                   <Link to="/">Home</Link>
                 </li>
                 <DropdownEksplore
                   isDropdownOpen={isDropdownOpen}
                   setIsDropdownOpen={setIsDropdownOpen}
                 />
-                <li>
+                <li className="hover:text-primary transition-all ease-in duration-100">
                   <Link to="/freelance-register">Freelance Register</Link>
                 </li>
               </ul>
@@ -117,16 +117,16 @@ export const NavbarFreelance = () => {
           <div className="flex items-center justify-between py-2 gap-8">
             <Logo />
             <SearchBar />
-            <nav className="flex items-center gap-8 text-sm font-semibold">
+            <nav className="flex items-center gap-8 text-sm xl:text-base font-semibold">
               <ul className="flex gap-8">
-                <li>
+                <li className="hover:text-primary transition-all ease-in duration-100">
                   <Link to="/">Home</Link>
                 </li>
                 <DropdownEksplore
                   isDropdownOpen={isDropdownOpen}
                   setIsDropdownOpen={setIsDropdownOpen}
                 />
-                <li>
+                <li className="hover:text-primary transition-all ease-in duration-100">
                   <Link to="/freelance-dashboard">Freelance Dashboard</Link>
                 </li>
               </ul>
@@ -143,7 +143,7 @@ export const NavbarFreelance = () => {
 // Komponen umum Logo
 const Logo = () => (
   <div className="flex items-center font-bold gap-1 text-3xl">
-    <img src={logo} className="w-16 -mr-5"/>
+    <img src={logo} className="w-16 -mr-4"/>
     <h1>FindJobs.</h1>
   </div>
 );
@@ -169,7 +169,7 @@ const DropdownEksplore = ({ isDropdownOpen, setIsDropdownOpen }) => {
 
   return (
     <li
-      className="relative flex items-center gap-2 cursor-pointer"
+      className="relative flex items-center gap-2 cursor-pointer hover:text-primary transition-all ease-in duration-100"
       onClick={toggleDropdown}
     >
       Eksplore
@@ -181,7 +181,7 @@ const DropdownEksplore = ({ isDropdownOpen, setIsDropdownOpen }) => {
         {isDropdownOpen ? <IoIosArrowUp /> : <IoIosArrowDown />}
       </span>
       {isDropdownOpen && (
-        <ul className="absolute top-10 left-0 w-36 bg-white border rounded-lg py-2 z-50 shadow-lg transition-all duration-300 ease-in-out">
+        <ul className="absolute top-10 left-0 w-36 bg-white border text-black rounded-lg py-2 z-50 shadow-lg transition-all duration-300 ease-in-out">
           <Link to="/service">
             <div  className="px-4 py-2 hover:bg-gray-100 transition-colors duration-150 flex items-center gap-1">
             <RiServiceLine />

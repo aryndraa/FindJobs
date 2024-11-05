@@ -9,7 +9,20 @@ const serviceData = [
     visitors: '20+ Visitors',
     price: 'Rp. 120.000',
   },
-  // Add more service objects as needed
+  {
+    image: 'https://img.freepik.com/free-photo/computer-program-coding-screen_53876-138060.jpg?t=st=1730483883~exp=1730487483~hmac=d54d5df263f8d9f67e81d267ad00c529a82401f6cec4614279a2a186e17d5061&w=740',
+    title: 'Learning Data Analyst in Python',
+    likes: 1903,
+    visitors: '20+ Visitors',
+    price: 'Rp. 120.000',
+  },
+  {
+    image: 'https://img.freepik.com/free-photo/computer-program-coding-screen_53876-138060.jpg?t=st=1730483883~exp=1730487483~hmac=d54d5df263f8d9f67e81d267ad00c529a82401f6cec4614279a2a186e17d5061&w=740',
+    title: 'Learning Data Analyst in Python',
+    likes: 1903,
+    visitors: '20+ Visitors',
+    price: 'Rp. 120.000',
+  },
 ];
 
 const CardAboutService = () => {

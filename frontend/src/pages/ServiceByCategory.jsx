@@ -1,10 +1,10 @@
 import React from "react";
 import { useLocation } from "react-router-dom";
 import ServiceCard from "../components/molecules/Service/Card/ServiceCard";
-import ProjectCardList from "../components/molecules/Project/Card/ProjectCardList";
+
 import CardListFreelancer from "../components/molecules/List Freelancer/Card/CardListFreelancer";
 
-const CategoryResults = () => {
+const ServiceByCategory = () => {
   const location = useLocation();
   const { pathname } = location;
   const { selectedCategories } = location.state || { selectedCategories: [] };
@@ -24,19 +24,13 @@ const CategoryResults = () => {
           ))}
         </div>
 
-        {/* <h3 className="text-2xl font-medium mt-6 mb-4">12,000 Results</h3>
-        {pathname === "/service/service-category" ? (
-          <ServiceCard />
-        ) 
-        : pathname === "/project/project-category" ? (
-          <ProjectCardList />
-        ) 
-        : pathname === "/list-freelancer/freelancer-category" ? (
-          <CardListFreelancer/>
-        ) : null} */}
+        <h3 className="text-2xl font-medium mt-6 mb-4">12,000 Results</h3>
+        {pathname === "/service/service-category " ? (
+          <ServiceCard/>
+        ) : null}
       </div>
     </div>
   );
 };
 
-export default CategoryResults;
+export default ServiceByCategory;

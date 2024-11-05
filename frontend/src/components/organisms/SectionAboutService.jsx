@@ -1,6 +1,6 @@
 import React from 'react'
 import AboutService from '../molecules/AboutService'
-import CardContactPerson from '../molecules/CardContactPerson'
+import CardContactPerson from '../molecules/Detail Service/Card/CardContactPerson'
 
 const SectionAboutService = () => {
   return (

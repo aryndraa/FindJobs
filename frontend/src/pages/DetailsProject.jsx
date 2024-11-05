@@ -4,17 +4,31 @@ import SkillsList from "../components/molecules/SkillsList";
 import ContactInfo from "../components/molecules/ContactInfo";
 import RelatedProjects from "../components/molecules/RelatedProject";
 import ProjectDetails from "../components/molecules/ProjectDetails";
+import BreadCrumbs from "../components/molecules/BreadCrumbs";
 const DetailsProject = () => {
+  const breadLink = [
+    {
+      url: "/",
+      name: "home",
+    },
+    {
+      url: "/project",
+      name: "project",
+    },
+    {
+      url: "/project/details-project",
+      name: "project details",
+    },
+  ]
   return (
-    <div className="mx-7 lg:mx-16 px-4 py-24">
+    <div className="mx-7 lg:mx-16 px-4 py-[7rem]">
+      <BreadCrumbs breadLink={breadLink} />
       <div className="md:flex md:space-x-8">
         <div className="md:w-2/3">
-          {/* Project Header and Skills List */}
           <ProjectHeader />
           <SkillsList />
         </div>
 
-        {/* Project Details and Contact Info */}
         <div className="md:w-1/3 mt-8 md:mt-0">
           <ProjectDetails />
           <ContactInfo />
