@@ -1,13 +1,14 @@
 <?php
 
-namespace App\Http\Controllers\Api\V1\Client\Chat;
+namespace App\Http\Controllers\Api\V1\Freelancer\Chat;
 
 use App\Http\Controllers\Controller;
-use App\Http\Requests\Api\V1\Client\Chat\SendingChatRequest;
-use App\Http\Resources\Api\V1\Client\Chat\ChatResource;
+use App\Http\Requests\Api\V1\Freelancer\Chat\SendingChatRequest;
+use App\Http\Resources\Api\V1\Freelancer\Chat\ChatResource;
 use App\Models\Client;
 use App\Models\Freelancer;
 use App\Models\UserChat;
+use Illuminate\Http\Request;
 
 class ChatController extends Controller
 {
