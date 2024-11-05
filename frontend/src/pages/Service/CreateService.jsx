@@ -1,7 +1,7 @@
 import React from "react";
-import CategoryDropdown from "../components/molecules/CategoryDropdown";
-import MinMaxPrice from "../components/molecules/MinMaxPrice";
-import SelectImage from "../components/molecules/SelectImage";
+import CategoryDropdown from "../../components/molecules/CategoryDropdown";
+import MinMaxPrice from "../../components/molecules/MinMaxPrice";
+import SelectImage from "../../components/molecules/SelectImage";
 
 const CreateService = () => {
   return (

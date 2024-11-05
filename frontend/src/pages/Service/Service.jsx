@@ -1,11 +1,11 @@
 // Service.js
 import React from "react";
-import HeroSection from "../components/molecules/Service/Hero/HeroService";
-import CategoryFilter from "../components/molecules/filter/CategoryFilter";
-import SearchBar from "../components/molecules/SearchBar";
-import SortingOptions from "../components/molecules/filter/SortingOptions";
-import ServiceCard from "../components/molecules/Service/Card/ServiceCard";
-import BreadCrumbs from "../components/molecules/BreadCrumbs";
+import HeroSection from "../../components/molecules/Service/Hero/HeroService";
+import CategoryFilter from "../../components/molecules/filter/CategoryFilter";
+import SearchBar from "../../components/molecules/SearchBar";
+import SortingOptions from "../../components/molecules/filter/SortingOptions";
+import ServiceCard from "../../components/molecules/Service/Card/ServiceCard";
+import BreadCrumbs from "../../components/molecules/BreadCrumbs";
 
 const Service = () => {
   const breadLink = [

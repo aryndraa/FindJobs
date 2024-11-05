@@ -4,6 +4,7 @@
 use App\Http\Controllers\Api\V1\Client\Authentication\AuthenticationController;
 use App\Http\Controllers\Api\V1\Client\Chat\ChatController;
 use App\Http\Controllers\Api\V1\Client\FreelancerManagement\FreelancerManagementController;
+use App\Http\Controllers\Api\V1\Client\Notification\NotificationController;
 use App\Http\Controllers\Api\V1\Client\ProfileManagement\ProfileManagementController;
 use App\Http\Controllers\Api\V1\Client\ProjectManagement\ProjectManagementController;
 use App\Http\Controllers\Api\V1\Client\ServiceManagement\ServiceManagementController;
@@ -72,6 +73,14 @@ Route::prefix('v1/client/')
                         Route::get('/list-chat', 'listChat')->name("listChat");
                         Route::post('/sending/{sendingType}/{sendingId}', 'sendingMessage')->name("sendingMessage");
                         Route::get('/receiving/{otherUserId}', 'receiving')->name("receiving");
+                    });
+
+                Route::controller(NotificationController::class)
+                    ->prefix('notification')
+                    ->name('notification.')
+                    ->group(function () {
+                        Route::get('/', 'index')->name("index");
+                        Route::get('/read/{notification}', 'allNotifications')->name("allNotifications");
                     });
             });
     });

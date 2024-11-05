@@ -1,10 +1,10 @@
 import React from "react";
-import HeroListFreelancer from "../components/molecules/List Freelancer/Hero/HeroListFreelancer";
-import CategoryFilter from "../components/molecules/filter/CategoryFilter";
-import SearchBar from "../components/molecules/SearchBar";
-import SortingOptions from "../components/molecules/filter/SortingOptions";
-import ProjectCard from "../components/molecules/Project/Card/ProjectCardList";
-import CardListFreelancer from "../components/molecules/List Freelancer/Card/CardListFreelancer";
+import HeroListFreelancer from "../../components/molecules/List Freelancer/Hero/HeroListFreelancer";
+import CategoryFilter from "../../components/molecules/filter/CategoryFilter";
+import SearchBar from "../../components/molecules/SearchBar";
+import SortingOptions from "../../components/molecules/filter/SortingOptions";
+import ProjectCard from "../../components/molecules/Project/Card/ProjectCardList";
+import CardListFreelancer from "../../components/molecules/List Freelancer/Card/CardListFreelancer";
 const ListFreelancer = () => {
   return (
     <div className="mx-7 lg:mx-16 py-24">

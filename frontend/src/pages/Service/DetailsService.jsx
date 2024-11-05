@@ -1,7 +1,7 @@
 import React from "react";
-import HeroDetailsService from "../components/molecules/Detail Service/Hero/HeroDetailsService";
-import SectionAboutService from "../components/organisms/SectionAboutService";
-import CardAboutService from "../components/molecules/Detail Service/Card/CardAboutService";
+import HeroDetailsService from "../../components/molecules/Detail Service/Hero/HeroDetailsService";
+import SectionAboutService from "../../components/organisms/SectionAboutService";
+import CardAboutService from "../../components/molecules/Detail Service/Card/CardAboutService";
 
 const DetailsService = () => {
   return (

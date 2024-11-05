@@ -1,9 +1,9 @@
 import React from "react";
-import ProjectHeader from "../components/molecules/ProjectHeader";
-import SkillsList from "../components/molecules/SkillsList";
-import ContactInfo from "../components/molecules/ContactInfo";
-import RelatedProjects from "../components/molecules/RelatedProject";
-import ProjectDetails from "../components/molecules/ProjectDetails";
+import ProjectHeader from "../../components/molecules/ProjectHeader";
+import SkillsList from "../../components/molecules/SkillsList";
+import ContactInfo from "../../components/molecules/ContactInfo";
+import RelatedProjects from "../../components/molecules/RelatedProject";
+import ProjectDetails from "../../components/molecules/ProjectDetails";
 const DetailsProject = () => {
   return (
     <div className="mx-7 lg:mx-16 px-4 py-24">

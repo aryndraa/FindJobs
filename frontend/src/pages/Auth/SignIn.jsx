@@ -2,7 +2,7 @@ import React from "react";
 import { FaUser, FaEnvelope } from "react-icons/fa";
 import { MdPassword } from "react-icons/md";
 import { Link, useLocation } from "react-router-dom";
-const FreelanceLogin = () => {
+const SignIn = () => {
   return (
     <div className="flex lg:items-center items-start justify-center min-h-screen bg-white">
       <form
@@ -11,7 +11,7 @@ const FreelanceLogin = () => {
         action="/sign-up/confirm-account"
       >
         <h2 className="text-2xl font-bold mt-2">Welcome Back!</h2>
-        <p className="text-secondary text-sm mt-2">Sign In into Your Freelance Account</p>
+        <p className="text-secondary text-sm mt-2">Sign In into Your Account</p>
         <div className="mb-4 mt-5">
           <label label className="block text-hitam mb-2">
             Username
@@ -43,7 +43,7 @@ const FreelanceLogin = () => {
           </div>
         </div>
 
-        <Link to="/">
+        <Link to="/frontend/public">
         <button
           type="submit"
           className="w-full bg-primary text-white py-2 rounded-lg hover:bg-green-700 transition duration-200 font-medium" 
@@ -54,7 +54,7 @@ const FreelanceLogin = () => {
         <div className="flex justify-start items-center text-sm">
         <p className="mt-4 text-center text-hitam">
           Dont Have Account?{" "}
-          <Link to="/freelance-register" className="text-primary hover:underline font-medium">
+          <Link to="/sign-up" className="text-primary hover:underline font-medium">
             Sign Up
           </Link>
         </p>
@@ -64,4 +64,4 @@ const FreelanceLogin = () => {
   );
 };
 
-export default FreelanceLogin;
+export default SignIn;

@@ -7,6 +7,7 @@ use App\Http\Requests\Api\V1\Freelancer\Chat\SendingChatRequest;
 use App\Http\Resources\Api\V1\Freelancer\Chat\ChatResource;
 use App\Models\Client;
 use App\Models\Freelancer;
+use App\Models\Notification;
 use App\Models\UserChat;
 use Illuminate\Http\Request;
 
@@ -57,6 +58,14 @@ class ChatController extends Controller
         $chat->receiver()->associate($receiver);
 
         $chat->save();
+
+        $notification = new Notification([
+            'message' => $chat->message,
+            "notification_title" => "you have a message from" . $user->username
+        ]);
+
+        $notification->user()->associate($receiver);
+        $notification->save();
 
         return response()->json([
             'chat' => $chat
