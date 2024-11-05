@@ -1,6 +1,6 @@
 import React from "react";
-import CategoryDropdown from "../components/molecules/CategoryDropdown";
-import MinMaxPrice from "../components/molecules/MinMaxPrice";
+import CategoryDropdown from "../../components/molecules/CategoryDropdown";
+import MinMaxPrice from "../../components/molecules/MinMaxPrice";
 
 const CreateProject = () => {
   return (

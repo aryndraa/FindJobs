@@ -1,9 +1,9 @@
 import React from "react";
-import HeroProject from "../components/molecules/Project/Hero/HeroProject";
-import CategoryFilter from "../components/molecules/filter/CategoryFilter";
-import SearchBar from "../components/molecules/SearchBar";
-import SortingOptions from "../components/molecules/filter/SortingOptions";
-import ProjectCard from "../components/molecules/Project/Card/ProjectCardList";
+import HeroProject from "../../components/molecules/Project/Hero/HeroProject";
+import CategoryFilter from "../../components/molecules/filter/CategoryFilter";
+import SearchBar from "../../components/molecules/SearchBar";
+import SortingOptions from "../../components/molecules/filter/SortingOptions";
+import ProjectCard from "../../components/molecules/Project/Card/ProjectCardList";
 const Project = () => {
   return (
     <div className="mx-7 lg:mx-16 py-24">
