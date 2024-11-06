@@ -25,7 +25,7 @@ class IndexServiceResource extends JsonResource
                 "id"     => $this->freelancer->id,
                 "name"   => $this->freelancer->name,
                 "avatar" => [
-                    "file_path" => $this->freelancer->profile->avatar->file_path ?? null,
+                    "file_path" => $this->freelancer->profile->avatar->file_url ?? null,
                     "file_name" => $this->freelancer->profile->avatar->file_name ?? null,
                     "file_type" => $this->freelancer->profile->avatar->file_type ?? null,
                 ]
@@ -39,7 +39,7 @@ class IndexServiceResource extends JsonResource
             "visitor" => $this->visitor_count,
             "like"    => $this->like_count,
             "image"   => [
-                "file_path" => $this->image->file_path ?? null,
+                "file_path" => $this->image->file_url ?? null,
                 "file_name" => $this->image->file_name ?? null,
                 "file_type" => $this->image->file_type ?? null,
             ]

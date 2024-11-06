@@ -1,10 +1,9 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import bg from "../assets/home/bg-mobile.svg";
 import freelance1 from "../assets/home/1.jpg";
 import freelance2 from "../assets/home/2.jpg";
 import freelance3 from "../assets/home/3.jpg";
 import freelance4 from "../assets/home/4.jpg";
-import ellipse from "../assets/home/elements/ellipse-kuning.svg";
 import vectorungu from "../assets/home/elements/zigzag-ungu.svg";
 import vectorbiru from "../assets/home/elements/zigzag-biru.svg";
 import centang from "../assets/home/elements/centang-hijau.svg";
@@ -16,8 +15,12 @@ import CardTestimony from "../components/molecules/Home/Card/CardTestimony";
 import AskQuestions from "../components/molecules/Home/CTA/AskQuestions";
 import CardCta from "../components/molecules/Home/Card/CardCta";
 import CategoryDekstop from "../components/organisms/CategoryDekstop";
+import { getServiceData } from '../components/services/Service';
 
 const Home = () => {
+
+
+
   return (
     <div className="mx-7 lg:mx-16 pt-32">
       {/* Hero */}

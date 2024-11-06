@@ -6,7 +6,6 @@ const CategoryFilter = () => {
   const [selectedCategories, setSelectedCategories] = useState([]);
   const navigate = useNavigate();
   const location = useLocation();
-  console.log(location);
 
   const categories = [
     "Software Developer",
@@ -43,7 +42,7 @@ const CategoryFilter = () => {
   };
 
   return (
-    <div className="p-4">
+    <div >
       <h2 className="text-lg font-bold mb-4">Find By Category</h2>
       <div className="flex flex-wrap gap-3">
         {categories.map((category, index) => (

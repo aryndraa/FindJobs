@@ -1,19 +1,22 @@
+// SortingOptions.js
 import React, { useState } from "react";
 import { FaChevronDown, FaChevronUp } from "react-icons/fa";
 
 const categories = [
-  "Default Sorting",
-  "Most Popular",
-  "Highest Rating",
-  "Low Price"
+  { label: "Default Sorting", value: "id" },
+  { label: "Most Viewed", value: "visitor_desc" },
+  { label: "High Rating", value: "like_desc" },
+  { label: "High Price", value: "price_desc" },
+  { label: "Low Price", value: "price_asc" },
 ];
 
-const SortingOptions = () => {
+const SortingOptions = ({ onSortChange }) => {
   const [selectedCategory, setSelectedCategory] = useState(null);
   const [isOpen, setIsOpen] = useState(false);
 
   const handleCategoryChange = (category) => {
-    setSelectedCategory(category);
+    setSelectedCategory(category.label);
+    onSortChange(category.value);
     setIsOpen(false);
   };
 
@@ -34,14 +37,14 @@ const SortingOptions = () => {
       </button>
       {isOpen && (
         <div className="absolute mt-2 bg-white border rounded-lg overflow-y-auto">
-          <ul className="">
+          <ul>
             {categories.map((category) => (
               <li
-                key={category}
+                key={category.value}
                 onClick={() => handleCategoryChange(category)}
                 className="cursor-pointer p-2 text-gray-700 hover:bg-gray-100 w-full text-[15px]"
               >
-                {category}
+                {category.label}
               </li>
             ))}
           </ul>

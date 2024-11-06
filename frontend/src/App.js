@@ -33,10 +33,7 @@ function App() {
         <Route path="/freelance-register" element={<FreelanceRegister />} />
         <Route path="/register/confirm-account-freelance" element={<ConfirmAccountFreelance />} />
         <Route path="/freelance-login" element={<FreelanceLogin />} />
-        <Route
-          path="/freelance-create-profile"
-          element={<CreateProfileFreelancer />}
-        />
+        <Route path="/freelance-create-profile" element={<CreateProfileFreelancer />} />
         <Route path="/project" element={<Project />} />
         <Route path="/project/project-category" element={<CategoryResults />} />
         <Route path="/project/create-project" element={<CreateProject />} />

@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 const BreadCrumbs = ({ breadLink }) => {
   return (
     <div>
-      <qdiv className="breadcrumbs text-secondary">
+      <div className="breadcrumbs text-secondary">
         <ul>
           {breadLink.map((link, index) => {
             return (
@@ -14,7 +14,7 @@ const BreadCrumbs = ({ breadLink }) => {
             );
           })}
         </ul>
-      </qdiv>
+      </div>
     </div>
   );
 };

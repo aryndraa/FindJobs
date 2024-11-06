@@ -1,27 +1,26 @@
-// SearchBar.js
+  // SearchBar.js
 import React from "react";
 import { IoSearch } from "react-icons/io5";
-const SearchBar = () => {
+const SearchBar = ({onChange, onSubmit}) => {
   return (
-    <div className="flex items-center justify-center gap-3 mt-4">
-      <form action="">
-        <div className="flex gap-3 items-center">
-          <input
-            type="text"
-            placeholder="Search Service"
-            className=" rounded px-8 py-2 bg-[#F7F7F7] outline-none"
-          />
-          <div >
-            <button
-              type="submit"
-              className="bg-primary text-white px-3 py-2 rounded"
-            >
-              <IoSearch className="text-2xl" />
-            </button>
-          </div>
+    <form onSubmit={onSubmit}>
+      <div className="flex gap-3 items-stretch">
+        <input
+          type="text"
+          placeholder="Search Service"
+          className=" rounded px-4 w-72 py-3 bg-[#F7F7F7] outline-none"
+          onChange={onChange}
+        />
+        <div>
+          <button
+            type="submit"
+            className="bg-primary text-white h-full px-3 rounded"
+          >
+            <IoSearch className="text-2xl" />
+          </button>
         </div>
-      </form>
-    </div>
+      </div>
+    </form>
   );
 };
 
